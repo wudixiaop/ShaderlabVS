@@ -1,0 +1,62 @@
+/*
+=============================================================================
+NFSA Summary for input file <Shaderlab.lex>
+=============================================================================
+Total NFSA states = 873
+Number of Start Conditions = 2
+Start condition INITIAL:
+  number of patterns = 14, number of nfsa states = 494, accept states = 14
+Start condition COMMENT:
+  number of patterns = 3, number of nfsa states = 19, accept states = 3
+=============================================================================
+GPLEX: NFSA built.   31 msec
+=============================================================================
+GPLEX: DFSA built.   31 msec
+=============================================================================
+GPLEX: DFSA minimized.   15 msec
+=============================================================================
+GPLEX: Shortest strings found.   15 msec
+=============================================================================
+DFSA Summary
+=============================================================================
+Number of dfsa instances = 2
+Start condition INITIAL:
+  number of dfsa states = 248, number of accept states = 38
+Start condition COMMENT:
+  number of dfsa states = 5, number of accept states = 5
+=============================================================================
+GPLEX: C# file emitted.   46 msec
+=============================================================================
+GPLEX Summary
+=============================================================================
+Total number of states = 155, total accept states = 28, backup states = 6
+Original state number was 254, minimized machine has 155 states
+Compression summary: used 834 nextstate entries, plus 121 map entries
+- Uncompressed automaton would have 172,687,360 nextstate entries
+- Input characters are packed into 45 equivalence classes
+- CharClass compression 100.00%, 45 entries Vs 1,114,112
+- Nextstate table compression 88.04%, 834 entries Vs 6,975
+- CharacterMap compression is 99.99%, 121 entries Vs 1,114,112
+- Decision tree depth is 1
+
+Backup state report --- 
+In <0>, after "\t" automaton could accept "{white_space}" in state 1
+--- after ''r'' automaton is in a non-accept state and might need to backup
+
+In <0>, after "0" automaton could accept "{digit}+" in state 4
+--- after ''x'' automaton is in a non-accept state and might need to backup
+
+In <0>, after "5" automaton could accept "{digit}+" in state 5
+--- after ''E'' automaton is in a non-accept state and might need to backup
+
+In <0>, after "\"" automaton could accept "." in state 7
+--- after ''\n'' automaton is in a non-accept state and might need to backup
+
+In <0>, after ".0" automaton could accept "{digit}*"."{digit}+({exponent})?({floatsuffix})?" in state 12
+--- after ''E'' automaton is in a non-accept state and might need to backup
+
+In <0>, after "0." automaton could accept "{digit}+"."{digit}*({exponent})?({floatsuffix})?" in state 15
+--- after ''E'' automaton is in a non-accept state and might need to backup
+
+=============================================================================
+ */
