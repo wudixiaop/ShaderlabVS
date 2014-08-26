@@ -1,7 +1,8 @@
 ShaderlabVS
 ===========
 
-A Visual Studio Plugin for Unity3D Shader.
+A Visual Studio Plugin for Unity3D Shader.  
+
 
 
 
