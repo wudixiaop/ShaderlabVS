@@ -9,7 +9,10 @@ namespace ShaderlabVS
     public class Constants
     {
         public const string ShaderlabText = "Shaderlab-Text";
-        public const string ShaderlabKeyword = "Shaderlab-Keyword";
+        public const string ShaderlabStrings = "Shaderlab-Strings";
+        public const string ShaderlabKeyword = "Shaderlab-Keywords";
+        public const string ShaderlabUnityBlockKeywords = "Shaderlab-UnityBlockKeywords";
+        public const string ShaderlabUnityNonBlockKeywords = "Shaderlab-UnityNonBlockKeywords";
         public const string ShaderlabComment = "Shaderlab-Comment";
         public const string ShaderlabIdentifier = "Shaderlab-Identifier";
         public const string ShaderlabQualifier = "Shaderlab-Qualifier";

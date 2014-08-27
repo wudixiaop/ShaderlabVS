@@ -26,6 +26,26 @@ namespace ShaderlabVS
     }
 
     /// <summary>
+    /// Strings
+    /// </summary>
+    [Export(typeof(EditorFormatDefinition))]
+    [ClassificationType(ClassificationTypeNames = Constants.ShaderlabStrings)]
+    [Name(Constants.ShaderlabStrings)]
+    [UserVisible(true)] //this should be visible to the end user
+    [Order(Before = Priority.Default)] //set the priority to be after the default classifiers
+    internal sealed class ShaderlabStrings : ClassificationFormatDefinition
+    {
+        /// <summary>
+        /// Defines the visual format for the "Shaderlab-Text" classification type
+        /// </summary>
+        public ShaderlabStrings()
+        {
+            this.DisplayName = Constants.ShaderlabStrings;
+            this.ForegroundColor = Colors.DarkRed;
+        }
+    }
+
+    /// <summary>
     /// Shader lab functions
     /// </summary>
     [Export(typeof(EditorFormatDefinition))]
@@ -38,7 +58,7 @@ namespace ShaderlabVS
         public ShaderlabFunctionFormat()
         {
             this.DisplayName = Constants.ShaderlabFunction;
-            this.ForegroundColor = Colors.DarkTurquoise;
+            this.ForegroundColor = Colors.DarkMagenta;
         }
     }
 
@@ -55,7 +75,7 @@ namespace ShaderlabVS
         public ShaderlabComment()
         {
             this.DisplayName = Constants.ShaderlabComment;
-            this.ForegroundColor = Colors.DarkRed;
+            this.ForegroundColor = Colors.ForestGreen;
         }
     }
 
@@ -73,6 +93,40 @@ namespace ShaderlabVS
         {
             this.DisplayName = Constants.ShaderlabKeyword;
             this.ForegroundColor = Colors.Blue;
+        }
+    }
+
+    /// <summary>
+    /// Unity3D keywords
+    /// </summary>
+    [Export(typeof(EditorFormatDefinition))]
+    [ClassificationType(ClassificationTypeNames = Constants.ShaderlabUnityBlockKeywords)]
+    [Name(Constants.ShaderlabUnityBlockKeywords)]
+    [UserVisible(true)]
+    [Order(Before = Priority.Default)]
+    internal sealed class ShaderlabUnityBlockKeywords : ClassificationFormatDefinition
+    {
+        public ShaderlabUnityBlockKeywords()
+        {
+            this.DisplayName = Constants.ShaderlabUnityBlockKeywords;
+            this.ForegroundColor = Colors.Blue;
+        }
+    }
+
+    /// <summary>
+    /// Unity3D keywords
+    /// </summary>
+    [Export(typeof(EditorFormatDefinition))]
+    [ClassificationType(ClassificationTypeNames = Constants.ShaderlabUnityNonBlockKeywords)]
+    [Name(Constants.ShaderlabUnityNonBlockKeywords)]
+    [UserVisible(true)]
+    [Order(Before = Priority.Default)]
+    internal sealed class ShaderlabUnityNonBlockKeywords : ClassificationFormatDefinition
+    {
+        public ShaderlabUnityNonBlockKeywords()
+        {
+            this.DisplayName = Constants.ShaderlabUnityNonBlockKeywords;
+            this.ForegroundColor = Colors.DarkMagenta;
         }
     }
 

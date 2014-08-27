@@ -59,28 +59,30 @@ namespace ShaderlabVS
 
             classTypeDict = new Dictionary<ShaderlabToken, IClassificationType>();
             classTypeDict.Add(ShaderlabToken.TEXT, registerService.GetClassificationType(Constants.ShaderlabText));
+            classTypeDict.Add(ShaderlabToken.SYMBOL, registerService.GetClassificationType(Constants.ShaderlabText));
             classTypeDict.Add(ShaderlabToken.COMMENT, registerService.GetClassificationType(Constants.ShaderlabComment));
             classTypeDict.Add(ShaderlabToken.COMMENT_LINE, registerService.GetClassificationType(Constants.ShaderlabComment));
             classTypeDict.Add(ShaderlabToken.DATATYPE, registerService.GetClassificationType(Constants.ShaderlabDataType));
             classTypeDict.Add(ShaderlabToken.FLOAT, registerService.GetClassificationType(Constants.ShaderlabText));
             classTypeDict.Add(ShaderlabToken.KEYWORD, registerService.GetClassificationType(Constants.ShaderlabKeyword));
+            classTypeDict.Add(ShaderlabToken.KEYWORDSPECIAL, registerService.GetClassificationType(Constants.ShaderlabKeyword));
+            classTypeDict.Add(ShaderlabToken.UNITYBLOCKKEYWORD, registerService.GetClassificationType(Constants.ShaderlabUnityBlockKeywords));
+            classTypeDict.Add(ShaderlabToken.UNITYNONBLOCKKEYWORD, registerService.GetClassificationType(Constants.ShaderlabUnityNonBlockKeywords));
             classTypeDict.Add(ShaderlabToken.NUMBER, registerService.GetClassificationType(Constants.ShaderlabText));
-            classTypeDict.Add(ShaderlabToken.STRING_LITERAL, registerService.GetClassificationType(Constants.ShaderlabComment));
+            classTypeDict.Add(ShaderlabToken.STRING_LITERAL, registerService.GetClassificationType(Constants.ShaderlabStrings));
             classTypeDict.Add(ShaderlabToken.UNDEFINED, registerService.GetClassificationType(Constants.ShaderlabText));
+            classTypeDict.Add(ShaderlabToken.FUNCTION, registerService.GetClassificationType(Constants.ShaderlabFunction));
+            classTypeDict.Add(ShaderlabToken.UNITYFUNCTION, registerService.GetClassificationType(Constants.ShaderlabFunction));
 
             Debug.WriteLine("ShaderlabClassifier");
         }
 
         public IEnumerable<ITagSpan<ClassificationTag>> GetTags(NormalizedSnapshotSpanCollection spans)
         {
-            Debug.WriteLine("GetTags");
-            IClassificationType cf = classTypeDict[ShaderlabToken.TEXT];
             string text = spans[0].Snapshot.GetText();
-            yield return new TagSpan<ClassificationTag>(new SnapshotSpan(spans[0].Snapshot, new Span(0, text.Length)), new ClassificationTag(cf));
-
             scanner.SetSource(text, 0);
             int token;
-
+            IClassificationType cf;
             do
             {
                 token = scanner.NextToken();
@@ -99,19 +101,31 @@ namespace ShaderlabVS
 
                 if (classTypeDict.TryGetValue((ShaderlabToken)token, out cf))
                 {
+                    switch ((ShaderlabToken)token)
+                    {
+                        case ShaderlabToken.KEYWORD:
+                        case ShaderlabToken.UNITYBLOCKKEYWORD:
+                        case ShaderlabToken.UNITYNONBLOCKKEYWORD:
+                        case ShaderlabToken.KEYWORDSPECIAL:
+                        case ShaderlabToken.FUNCTION:
+                        case ShaderlabToken.UNITYFUNCTION:
+                            length--;
+                            break;
+                        case ShaderlabToken.DATATYPE:
+                            pos++;
+                            length = length - 2;
+                            break;
+                    }
                     yield return new TagSpan<ClassificationTag>(new SnapshotSpan(spans[0].Snapshot, new Span(pos, length)),
                                                                 new ClassificationTag(cf));
+
                 }
 
             } while (token > (int)Tokens.EOF);
 
         }
 
-        public event EventHandler<SnapshotSpanEventArgs> TagsChanged
-        {
-            add { }
-            remove { }
-        }
+        public event EventHandler<SnapshotSpanEventArgs> TagsChanged;
     }
 
     #endregion //Classifier

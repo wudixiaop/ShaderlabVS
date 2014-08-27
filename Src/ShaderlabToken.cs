@@ -15,7 +15,13 @@ namespace ShaderlabVS
         STRING_LITERAL,
         FLOAT,
         KEYWORD,
+        KEYWORDSPECIAL,
+        UNITYBLOCKKEYWORD,
+        UNITYNONBLOCKKEYWORD,
+        FUNCTION,
+        UNITYFUNCTION,
         DATATYPE,
-        UNDEFINED
+        SYMBOL,
+        UNDEFINED,
     }
 }
