@@ -88,7 +88,7 @@
 
 		struct Input 
 		{
-			float4 color : COLOR;
+			float4 color :COLOR;
 			float2 uv_MainTex;
 			float2 uv_BumpMap;
 			float3 viewDir;

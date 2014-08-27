@@ -72,7 +72,7 @@ namespace ShaderlabVS
 
         public IEnumerable<ITagSpan<ClassificationTag>> GetTags(NormalizedSnapshotSpanCollection spans)
         {
-            string text = spans[0].Snapshot.GetText();
+            string text = " " + spans[0].Snapshot.GetText();
             scanner.SetSource(text, 0);
             int token;
             IClassificationType cf;
@@ -100,13 +100,16 @@ namespace ShaderlabVS
                         case ShaderlabToken.KEYWORD:
                         case ShaderlabToken.UNITYBLOCKKEYWORD:
                         case ShaderlabToken.UNITYNONBLOCKKEYWORD:
-                        case ShaderlabToken.KEYWORDSPECIAL:
                         case ShaderlabToken.FUNCTION:
                         case ShaderlabToken.UNITYFUNCTION:
                         case ShaderlabToken.DATATYPE:
-                            pos++;
                             length = length - 2;
                             scanner.PushbackText(length + 1);
+                            break;
+                        case ShaderlabToken.KEYWORDSPECIAL:
+                            pos--;
+                            length = length - 1;
+                            scanner.PushbackText(length);
                             break;
                     }
 

@@ -40,8 +40,8 @@ keywordsSpeical     ALPHATOCOVERAGEENABLE|BLENDENABLE|SRCBLEND|DESTBLEND|BLENDOP
 datatype			AppendStructuredBuffer|bool|bool2|bool3|bool4|Buffer|ByteAddressBuffer|ConsumeStructuredBuffer|double|double2|double3|double4|fixed|fixed2|fixed3|fixed4|float|float1x1|float1x2|float1x3|float1x4|float2|float2x1|float2x2|float2x3|float2x4|float3|float3x1|float3x2|float3x3|float3x4|float4|float4x1|float4x2|float4x3|float4x4|half|half2|half3|half4|InputPatch|int|int2|int3|int4|line|lineadj|LineStream|matrix|OutputPatch|point|PointStream|RWBuffer|RWByteAddressBuffer|RWStructuredBuffer|RWTexture1D|RWTexture1DArray|RWTexture2D|RWTexture2DArray|RWTexture3D|string|StructuredBuffer|Texture1D|Texture1DArray|Texture2D|Texture2DArray|Texture2DMS|Texture2DMSArray|Texture3D|triangle|triangleadj|TriangleStream|uint|uint2|uint3|uint4|vector|sampler|sampler2D|sampler3D|samplerCUBE
 function		    abs|acos|all|AllMemoryBarrier|AllMemoryBarrierWithGroupSync|any|asdouble|asfloat|asin|asint|asuint|atan|atan2|ceil|clamp|clip|cos|cosh|countbits|cross|D3DCOLORtoUBYTE4|ddx|ddx_coarse|ddx_fine|ddy|ddy_coarse|ddy_fine|degrees|determinant|DeviceMemoryBarrier|DeviceMemoryBarrierWithGroupSync|distance|dot|dst|EvaluateAttributeAtCentroid|EvaluateAttributeAtSample|EvaluateAttributeSnapped|exp|exp2|f16tof32|f32tof16|faceforward|firstbithigh|firstbitlow|floor|fmod|frac|frexp|fwidth|GetRenderTargetSampleCount|GetRenderTargetSamplePosition|GroupMemoryBarrier|GroupMemoryBarrierWithGroupSync|InterlockedAdd|InterlockedAnd|InterlockedCompareExchange|InterlockedCompareStore|InterlockedExchange|InterlockedMax|InterlockedMin|InterlockedOr|InterlockedXor|isfinite|isinf|isnan|ldexp|length|lerp|lit|log|log10|log2|mad|max|min|modf|mul|noise|normalize|pow|Process2DQuadTessFactorsAvg|Process2DQuadTessFactorsMax|Process2DQuadTessFactorsMin|ProcessIsolineTessFactors|ProcessQuadTessFactorsAvg|ProcessQuadTessFactorsMax|ProcessQuadTessFactorsMin|ProcessTriTessFactorsAvg|ProcessTriTessFactorsMax|ProcessTriTessFactorsMin|radians|rcp|reflect|refract|reversebits|round|rsqrt|saturate|sign|sin|sincos|sinh|smoothstep|sqrt|step|tan|tanh|tex1D|tex1Dbias|tex1Dgrad|tex1Dlod|tex1Dproj|tex2D|tex2Dbias|tex2Dgrad|tex2Dlod|tex2Dproj|tex3D|tex3Dbias|tex3Dgrad|tex3Dlod|tex3Dproj|texCUBE|texCUBEbias|texCUBEgrad|texCUBElod|texCUBEproj|transpose|trunc
 
-unityDataType				Rect|Color|2D|Rect|Cube|Float|Range{blank}*\({blank}*{numbers}{blank}*,{blank}*{numbers}{blank}*\)|Vector
-unityKeywordsWithPara		#pragma
+unityDataType				[Rr]ect|[Cc]olor|2D|[Rr]ect|[Cc]ube|[Ff]loat|[Rr]ange{blank}*\({blank}*{numbers}{blank}*,{blank}*{numbers}{blank}*\)|[Vv]ector|appdata_base
+unityKeywordsWithPara		#pragma|#include
 unityBlockKeywords			CGPROGRAM|ENDCG|Shader|SubShader|FallBack|Properties|Pass|UsePass|Tags|BindChannels|Stencil|Material
 unityNonBlockKeywords		LOD|Lighting|SetTexture|Cull|Fog|ZWrite|ZTest|AlphaTest|Blend|ColorMask|Offset|SeparateSpecular|ColorMaterial|Diffuse|Ambient|Shininess|Specular|Emission|[Cc]ombine|Mode|Density|Range|Greater|GEqual|Less|LEqual|Equal|NotEqual|Always|Never|Add|Sub|RevSub|Min|Max|LogicalClear|LogicalSet|LogicalCopy|LogicalCopyInverted|LogicalNoop|LogicalInvert|LogicalAnd|LogicalNand|LogicalOr|LogicalNor|LogicalXor|LogicalEquiv|LogicalAndReverse|LogicalAndInverted|LogicalOrReverse|LogicalOrInverted|One|Zero|SrcColor|SrcAlpha|DstColor|DstAlpha|OneMinusSrcColor|OneMinusSrcAlpha|OneMinusDstColor|OneMinusDstAlpha|LightMode|Always|ForwardBase|ForwardAdd|PrepassBase|PrepassFinal|Vertex|VertexLMRGBM|VertexLM|ShadowCaster|ShadowCollector|RequireOptions|SoftVegetation|Name|Bind|Ref|ReadMask|WriteMask|Comp|Fail|ZFail|DOUBLE
 unityFunction				UnpackNormal
@@ -72,9 +72,6 @@ unityFunction				UnpackNormal
 ({white_space}|{symbol}){unityNonBlockKeywords}{blank}*({white_space}|{symbol})		{return (int)ShaderlabToken.UNITYNONBLOCKKEYWORD;}
 ({white_space}|{symbol}){unityKeywordsWithPara}({blank}+{words})*{white_space}		{return (int)ShaderlabToken.UNITYNONBLOCKKEYWORD;}
 
-/**speical fix**/
-/*****************************/
-"Shader"{blank}*({white_space}|{symbol}) {return (int)ShaderlabToken.UNITYBLOCKKEYWORD;}
 
 /**********Date Type**********/
 /*****************************/
