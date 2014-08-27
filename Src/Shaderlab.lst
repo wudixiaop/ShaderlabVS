@@ -9,7 +9,7 @@ Start condition INITIAL:
 Start condition COMMENT:
   number of patterns = 3, number of nfsa states = 19, accept states = 3
 =============================================================================
-GPLEX: NFSA built.   46 msec
+GPLEX: NFSA built.   31 msec
 =============================================================================
 GPLEX: DFSA built. 3759 msec
 =============================================================================
