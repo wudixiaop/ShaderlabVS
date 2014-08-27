@@ -34,8 +34,6 @@ namespace ShaderlabVS
         [Import]
         internal IClassificationTypeRegistryService classificationTypeRegistry = null;
 
-         [Import]
-         internal IBufferTagAggregatorFactoryService aggregatorFactory = null;
 
         public ITagger<T> CreateTagger<T>(ITextBuffer buffer) where T : ITag
         {
@@ -73,8 +71,6 @@ namespace ShaderlabVS
             classTypeDict.Add(ShaderlabToken.UNDEFINED, registerService.GetClassificationType(Constants.ShaderlabText));
             classTypeDict.Add(ShaderlabToken.FUNCTION, registerService.GetClassificationType(Constants.ShaderlabFunction));
             classTypeDict.Add(ShaderlabToken.UNITYFUNCTION, registerService.GetClassificationType(Constants.ShaderlabFunction));
-
-            Debug.WriteLine("ShaderlabClassifier");
         }
 
         public IEnumerable<ITagSpan<ClassificationTag>> GetTags(NormalizedSnapshotSpanCollection spans)
@@ -83,6 +79,7 @@ namespace ShaderlabVS
             scanner.SetSource(text, 0);
             int token;
             IClassificationType cf;
+
             do
             {
                 token = scanner.NextToken();
@@ -109,13 +106,16 @@ namespace ShaderlabVS
                         case ShaderlabToken.KEYWORDSPECIAL:
                         case ShaderlabToken.FUNCTION:
                         case ShaderlabToken.UNITYFUNCTION:
-                            length--;
+                            pos++;
+                            length = length - 2;
+                            scanner.PushbackText(length + 1);
                             break;
                         case ShaderlabToken.DATATYPE:
                             pos++;
                             length = length - 2;
                             break;
                     }
+
                     yield return new TagSpan<ClassificationTag>(new SnapshotSpan(spans[0].Snapshot, new Span(pos, length)),
                                                                 new ClassificationTag(cf));
 

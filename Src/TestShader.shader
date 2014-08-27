@@ -23,7 +23,7 @@
 		Tags { "RenderType"="Opaque" }
 		LOD 200
 		
-		Pass {
+		Pass{
 			Lighting Off
 			SetTexture [_MainTex] {}
 			Cull Back
@@ -78,9 +78,13 @@
 		float4 _ColorTint;
 		sampler2D _MainTex;
 		sampler2D _BumpMap;
+		sampler3D _sampler3DValue;
+		samplerCUBE _samplerCUBEValue;
 		float4 _RimColor;
 		float _RimPower;
 		float _Shinness;
+		fixed _FxiedValue;
+		half _HalfValue;
 
 		struct Input 
 		{
@@ -96,8 +100,8 @@
 			float4 c = tex2D(_MainTex, IN.uv_MainTex);
 			o.Albedo = c.rgb * IN.color.rgb;
 			o.Alpha = c.a;
-			o.Normal = UnpackNormal(tex2D(_BumpMap, IN.uv_BumpMap));
-			tex2D f =tex2D(_MainTex, IN.uv_MainTex);
+			o.Normal = UnpackNormal( tex2D (_BumpMap, IN.uv_BumpMap));
+			tex2D f = tex2D(_MainTex, IN.uv_MainTex);
 
 			half rim = 1 - saturate(dot(IN.viewDir, o.Normal));
 			o.Emission = _RimColor.rgb * pow(rim, _RimPower);
@@ -105,7 +109,7 @@
 			o.Specular = _Shinness;
 			o.Gloss = c.a;
 
-			if(true)
+			if (true)
 			{
 
 			}
@@ -113,10 +117,16 @@
 			{
 
 			}
-
-			do{
+			
+			do
+			{
 			}
 			while(false)
+
+			for(int i=0; i < 100; i++)
+			{
+
+			}
 		}
 
 		ENDCG
