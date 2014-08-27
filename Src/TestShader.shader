@@ -5,7 +5,7 @@
 		_MainTex ("Main Texture", 2D) = "white" {}
 		_BumpMap ("Bump Map", 2D) = "white" {}
 		_RimColor ("Rim Color", Color) = (1, 1, 1, 1)
-		_RimPower ("Rim Power", Range (0.5 , 10)) = 3.0
+		_RimPower ("Rim Power", Range (0.5 , +10)) = 3.0
 		_SpecColor ("Specular Color", Color) = (1, 1, 1, 1)
 		_Shinness ("Shinness", Range(-1, 2.0)) = 0.5
 		_Vector ("Vector", Vector) = (1,1,1,1)

@@ -11,9 +11,7 @@ namespace ShaderlabVS
         TEXT,
         COMMENT_LINE,
         COMMENT,
-        NUMBER,
         STRING_LITERAL,
-        FLOAT,
         KEYWORD,
         KEYWORDSPECIAL,
         UNITYBLOCKKEYWORD,
@@ -21,7 +19,6 @@ namespace ShaderlabVS
         FUNCTION,
         UNITYFUNCTION,
         DATATYPE,
-        SYMBOL,
         UNDEFINED,
     }
 }

@@ -57,16 +57,13 @@ namespace ShaderlabVS
 
             classTypeDict = new Dictionary<ShaderlabToken, IClassificationType>();
             classTypeDict.Add(ShaderlabToken.TEXT, registerService.GetClassificationType(Constants.ShaderlabText));
-            classTypeDict.Add(ShaderlabToken.SYMBOL, registerService.GetClassificationType(Constants.ShaderlabText));
             classTypeDict.Add(ShaderlabToken.COMMENT, registerService.GetClassificationType(Constants.ShaderlabComment));
             classTypeDict.Add(ShaderlabToken.COMMENT_LINE, registerService.GetClassificationType(Constants.ShaderlabComment));
             classTypeDict.Add(ShaderlabToken.DATATYPE, registerService.GetClassificationType(Constants.ShaderlabDataType));
-            classTypeDict.Add(ShaderlabToken.FLOAT, registerService.GetClassificationType(Constants.ShaderlabText));
             classTypeDict.Add(ShaderlabToken.KEYWORD, registerService.GetClassificationType(Constants.ShaderlabKeyword));
             classTypeDict.Add(ShaderlabToken.KEYWORDSPECIAL, registerService.GetClassificationType(Constants.ShaderlabKeyword));
             classTypeDict.Add(ShaderlabToken.UNITYBLOCKKEYWORD, registerService.GetClassificationType(Constants.ShaderlabUnityBlockKeywords));
             classTypeDict.Add(ShaderlabToken.UNITYNONBLOCKKEYWORD, registerService.GetClassificationType(Constants.ShaderlabUnityNonBlockKeywords));
-            classTypeDict.Add(ShaderlabToken.NUMBER, registerService.GetClassificationType(Constants.ShaderlabText));
             classTypeDict.Add(ShaderlabToken.STRING_LITERAL, registerService.GetClassificationType(Constants.ShaderlabStrings));
             classTypeDict.Add(ShaderlabToken.UNDEFINED, registerService.GetClassificationType(Constants.ShaderlabText));
             classTypeDict.Add(ShaderlabToken.FUNCTION, registerService.GetClassificationType(Constants.ShaderlabFunction));
@@ -106,13 +103,10 @@ namespace ShaderlabVS
                         case ShaderlabToken.KEYWORDSPECIAL:
                         case ShaderlabToken.FUNCTION:
                         case ShaderlabToken.UNITYFUNCTION:
-                            pos++;
-                            length = length - 2;
-                            scanner.PushbackText(length + 1);
-                            break;
                         case ShaderlabToken.DATATYPE:
                             pos++;
                             length = length - 2;
+                            scanner.PushbackText(length + 1);
                             break;
                     }
 
