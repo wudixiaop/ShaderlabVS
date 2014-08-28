@@ -111,6 +111,9 @@ namespace ShaderlabVS
                             length = length - 1;
                             scanner.PushbackText(length);
                             break;
+                        case ShaderlabToken.STRING_LITERAL:
+                            pos--;
+                            break;
                     }
 
                     yield return new TagSpan<ClassificationTag>(new SnapshotSpan(spans[0].Snapshot, new Span(pos, length)),
