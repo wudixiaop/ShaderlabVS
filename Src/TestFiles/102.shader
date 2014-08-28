@@ -9,18 +9,16 @@
 		_SpecColor ("Specular Color", Color) = (1, 1, 1, 1)
 		_Shinness ("Shinness", Range(-1, 2.0)) = 0.5
 		_Vector ("Vector", Vector) = (1,1,1,1)
-	}
-	
-	// Comment test
+	}// Comment test
 	//
 	/* Comment test*/
 	/* Comment
 	//  test
-	**
+	/**
 	*/
-	SubShader // Comment test
+	SubShader// Comment test /**/
     {
-		Tags { "RenderType"="Opaque" }
+		Tags { "RenderType"="Opaque"/**/ }
 		LOD 200
 		
 		Pass{
@@ -44,7 +42,7 @@
             Lighting On
             SeparateSpecular On
             SetTexture [_MainTex] {
-                Combine texture * primary DOUBLE, texture * primary
+                Combine texture * primary DOUBLE,/*dfasdf*/ texture * primary
             }
         }
 

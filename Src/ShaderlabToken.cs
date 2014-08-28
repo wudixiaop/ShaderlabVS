@@ -9,7 +9,6 @@ namespace ShaderlabVS
     public enum ShaderlabToken
     {
         TEXT,
-        COMMENT_LINE,
         COMMENT,
         STRING_LITERAL,
         KEYWORD,

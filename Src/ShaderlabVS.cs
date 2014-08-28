@@ -63,7 +63,6 @@ namespace ShaderlabVS
             classTypeDict = new Dictionary<ShaderlabToken, IClassificationType>();
             classTypeDict.Add(ShaderlabToken.TEXT, registerService.GetClassificationType(Constants.ShaderlabText));
             classTypeDict.Add(ShaderlabToken.COMMENT, registerService.GetClassificationType(Constants.ShaderlabComment));
-            classTypeDict.Add(ShaderlabToken.COMMENT_LINE, registerService.GetClassificationType(Constants.ShaderlabComment));
             classTypeDict.Add(ShaderlabToken.DATATYPE, registerService.GetClassificationType(Constants.ShaderlabDataType));
             classTypeDict.Add(ShaderlabToken.KEYWORD, registerService.GetClassificationType(Constants.ShaderlabKeyword));
             classTypeDict.Add(ShaderlabToken.KEYWORDSPECIAL, registerService.GetClassificationType(Constants.ShaderlabKeyword));
@@ -117,8 +116,14 @@ namespace ShaderlabVS
                             scanner.PushbackText(length);
                             break;
                         case ShaderlabToken.STRING_LITERAL:
+                        case ShaderlabToken.COMMENT:
                             pos--;
                             break;
+                    }
+
+                    if (pos < 0 || length < 0 || pos > text.Length)
+                    {
+                        continue;
                     }
 
                     yield return new TagSpan<ClassificationTag>(new SnapshotSpan(spans[0].Snapshot, new Span(pos, length)),
