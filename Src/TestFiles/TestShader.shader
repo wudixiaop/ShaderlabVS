@@ -99,7 +99,7 @@
 			IN.color = _ColorTint;
 			float4 c = tex2D(_MainTex, IN.uv_MainTex);
 			o.Albedo = c.rgb * IN.color.rgb;
-			o.Alpha = c.a;
+			o.Alpha = mul(UNITY_MATRIX_MVP,c.a);
 			o.Normal = UnpackNormal( tex2D (_BumpMap, IN.uv_BumpMap));
 			tex2D f = tex2D(_MainTex, IN.uv_MainTex);
 
@@ -107,7 +107,7 @@
 			o.Emission = _RimColor.rgb * pow(rim, _RimPower);
 
 			o.Specular = _Shinness;
-			o.Gloss = c.a;
+			o.Gloss = mul(UNITY_MATRIX_MVP,c.a);
 
 			if (true)
 			{
