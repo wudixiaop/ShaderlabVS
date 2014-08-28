@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Id="ShaderlabVS..c702cfb7-573c-45f4-9469-115fcb519ad2" Version="1.0" Language="en-US" Publisher="Rocky Lai" />
+    <Identity Id="ShaderlabVS..c702cfb7-573c-45f4-9469-115fcb519ad2" Version="0.1" Language="en-US" Publisher="Rocky Lai" />
     <DisplayName>ShaderlabVS</DisplayName>
-    <Description>This is a sample classifier extension to the Visual Studio Editor.</Description>
+    <Description xml:space="preserve">A Visual Studo plugin for Unity3D shader</Description>
   </Metadata>
   <Installation>
     <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="11.0" />
