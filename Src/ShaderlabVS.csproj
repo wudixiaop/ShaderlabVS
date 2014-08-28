@@ -82,6 +82,7 @@
     </None>
     <None Include="TestFiles\101.shader" />
     <None Include="TestFiles\102.shader" />
+    <None Include="TestFiles\C01.compute" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="gplex.exe" />

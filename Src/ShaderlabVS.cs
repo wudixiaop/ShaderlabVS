@@ -31,6 +31,11 @@ namespace ShaderlabVS
         [ContentType(Constants.ContentType)]
         public static FileExtensionToContentTypeDefinition ShaderlabFileTYpe = null;
 
+        [Export]
+        [FileExtension(Constants.ComputeShaderFileNameExt)]
+        [ContentType(Constants.ContentType)]
+        public static FileExtensionToContentTypeDefinition ComputeShaderFileTYpe = null;
+
         [Import]
         internal IClassificationTypeRegistryService classificationTypeRegistry = null;
 
