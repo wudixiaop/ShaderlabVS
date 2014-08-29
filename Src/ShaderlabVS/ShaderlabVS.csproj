@@ -85,7 +85,22 @@
     <None Include="TestFiles\C01.compute" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Data\HLSL_CG_datatype.def" />
+    <Content Include="Data\HLSL_CG_functions.def" />
+    <Content Include="Data\HLSL_CG_Keywords.def">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Data\Unity3D_functions.def" />
+    <Content Include="Data\Unity3D_keywords.def" />
+    <Content Include="Data\Unity3D_macros.txt" />
+    <Content Include="Data\Unity3D_values.def" />
     <Content Include="gplex.exe" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ShaderlabVS.Data\ShaderlabVS.Data.csproj">
+      <Project>{6f1e6f30-1728-43ad-96c6-494cd780b6e6}</Project>
+      <Name>ShaderlabVS.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" Condition="'$(VSToolsPath)' != ''" />

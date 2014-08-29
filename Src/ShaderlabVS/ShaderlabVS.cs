@@ -135,7 +135,11 @@ namespace ShaderlabVS
 
         }
 
-        public event EventHandler<SnapshotSpanEventArgs> TagsChanged;
+        public event EventHandler<SnapshotSpanEventArgs> TagsChanged
+        {
+            add { }
+            remove { }
+        }
     }
 
     #endregion //Classifier

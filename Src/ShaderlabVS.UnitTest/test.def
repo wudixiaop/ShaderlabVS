@@ -1,0 +1,72 @@
+﻿# keywords   reversed
+#	%			\%
+#	=			\=
+#	{			\{
+#	}			\}
+#	$			\$
+
+# Fucntions
+#
+{%
+	%$ Name = { abs } $%
+	%$ Synopsis = {
+		float  abs(float  a);
+		float1 abs(float1 a);
+		float2 abs(float2 a);
+		float3 abs(float3 a);
+		float4 abs(float4 a);
+
+		half   abs(half  a);
+		half1  abs(half1 a);
+		half2  abs(half2 a);
+		half3  abs(half3 a);
+		half4  abs(half4 a);
+
+		fixed  abs(fixed  a);
+		fixed1 abs(fixed1 a);
+		fixed2 abs(fixed2 a);
+		fixed3 abs(fixed3 a);
+		fixed4 abs(fixed4 a);
+	} $%
+	%$ Description = { returns absolute value of scalars and vectors.} $%
+%}
+
+{%
+	%$ Name = { acos  } $%
+	%$ Synopsis = {
+		float  acos(float a);
+		float1 acos(float1 a);
+		float2 acos(float2 a);
+		float3 acos(float3 a);
+		float4 acos(float4 a);
+
+		half   acos(half a);
+		half1  acos(half1 a);
+		half2  acos(half2 a);
+		half3  acos(half3 a);
+		half4  acos(half4 a);
+
+		fixed  acos(fixed a);
+		fixed1 acos(fixed1 a);
+		fixed2 acos(fixed2 a);
+		fixed3 acos(fixed3 a);
+		fixed4 acos(fixed4 a);
+	} $%
+	%$ Description ={ returns arccosine of scalars and vectors.} $%
+%}
+
+#Keywords
+#
+{%
+	%$keywords={
+		while
+		do
+		for
+		int
+	}$%
+%}
+
+# Escapte Words
+#
+
+{% %$ Escape\#Chars = { \\#\=>\#, \\$\=>\$, \\{\=>\{, \\}\=\}, \\=\=>\=, \\%\=>\% } $%  %}

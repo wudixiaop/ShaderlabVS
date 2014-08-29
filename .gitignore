@@ -215,3 +215,5 @@ pip-log.txt
 .mr.developer.cfg
 Src/Shaderlab.lst
 Src/Shaderlab.cs
+Src/ShaderlabVS/Shaderlab.cs
+Src/ShaderlabVS/Shaderlab.lst

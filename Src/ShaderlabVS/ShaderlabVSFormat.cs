@@ -31,8 +31,8 @@ namespace ShaderlabVS
     [Export(typeof(EditorFormatDefinition))]
     [ClassificationType(ClassificationTypeNames = Constants.ShaderlabStrings)]
     [Name(Constants.ShaderlabStrings)]
-    [UserVisible(true)] //this should be visible to the end user
-    [Order(Before = Priority.Default)] //set the priority to be after the default classifiers
+    [UserVisible(true)]
+    [Order(Before = Priority.Default)]
     internal sealed class ShaderlabStrings : ClassificationFormatDefinition
     {
         /// <summary>
@@ -46,7 +46,7 @@ namespace ShaderlabVS
     }
 
     /// <summary>
-    /// Shader lab functions
+    /// Functions
     /// </summary>
     [Export(typeof(EditorFormatDefinition))]
     [ClassificationType(ClassificationTypeNames = Constants.ShaderlabFunction)]
