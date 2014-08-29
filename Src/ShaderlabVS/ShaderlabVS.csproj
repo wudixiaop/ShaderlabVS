@@ -92,6 +92,7 @@
     </Content>
     <Content Include="Data\Unity3D_functions.def" />
     <Content Include="Data\Unity3D_keywords.def" />
+    <Content Include="Data\Unity3D_macros.def" />
     <Content Include="Data\Unity3D_values.def" />
     <Content Include="gplex.exe" />
   </ItemGroup>
