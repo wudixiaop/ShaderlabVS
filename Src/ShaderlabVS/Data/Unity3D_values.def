@@ -1,1 +1,194 @@
-﻿
+﻿#
+# A defination for the built-in values in Unity3D
+#
+# Use the format:
+#	{%
+#		%$ Name = {} $%
+#		%$ Type = {} $%
+#		%$ Value = {} $%
+#	%}
+#
+
+#-------------------------------------------------------------------------------------------------
+#----------------------------------------Transformations ----------------------------------------
+#-------------------------------------------------------------------------------------------------
+
+{%
+	%$ Name = {UNITY_MATRIX_MVP} $%
+	%$ Type = {float4x4} $%
+	%$ Value = {Current model * view * projection matrix.} $%
+%}
+
+{%
+	%$ Name = {UNITY_MATRIX_MV} $%
+	%$ Type = {float4x4} $%
+	%$ Value = {Current model * view matrix.} $%
+%}
+
+{%
+	%$ Name = {UNITY_MATRIX_V} $%
+	%$ Type = {float4x4} $%
+	%$ Value = {Current view matrix.} $%
+%}
+
+
+{%
+	%$ Name = {UNITY_MATRIX_P} $%
+	%$ Type = {float4x4} $%
+	%$ Value = {Current projection matrix.} $%
+%}
+
+
+{%
+	%$ Name = {UNITY_MATRIX_VP} $%
+	%$ Type = {float4x4} $%
+	%$ Value = {Current view * projection matrix.} $%
+%}
+
+
+{%
+	%$ Name = {UNITY_MATRIX_T_MV} $%
+	%$ Type = {float4x4} $%
+	%$ Value = {Transpose of model * view matrix.} $%
+%}
+
+{%
+	%$ Name = {UNITY_MATRIX_IT_MV} $%
+	%$ Type = {float4x4} $%
+	%$ Value = {Inverse transpose of model * view matrix.} $%
+%}
+
+{%
+	%$ Name = {UNITY_MATRIX_TEXTURE0} $%
+	%$ Type = {float4x4} $%
+	%$ Value = {Texture transformation matrices.} $%
+%}
+
+{%
+	%$ Name = {UNITY_MATRIX_TEXTURE1} $%
+	%$ Type = {float4x4} $%
+	%$ Value = {Texture transformation matrices.} $%
+%}
+
+{%
+	%$ Name = {UNITY_MATRIX_TEXTURE2} $%
+	%$ Type = {float4x4} $%
+	%$ Value = {Texture transformation matrices.} $%
+%}
+
+{%
+	%$ Name = {UNITY_MATRIX_TEXTURE3} $%
+	%$ Type = {float4x4} $%
+	%$ Value = {Texture transformation matrices.} $%
+%}
+
+{%
+	%$ Name = {_Object2World} $%
+	%$ Type = {float4x4} $%
+	%$ Value = {Current model matrix.} $%
+%}
+
+
+{%
+	%$ Name = {_World2Object} $%
+	%$ Type = {float4x4} $%
+	%$ Value = {Inverse of current world matrix.} $%
+%}
+
+{%
+	%$ Name = {_WorldSpaceCameraPos} $%
+	%$ Type = {float3} $%
+	%$ Value = {World space position of the camera.} $%
+%}
+
+{%
+	%$ Name = {unity_Scale} $%
+	%$ Type = {float4} $%
+	%$ Value = {xyz components unused; w contains scale for uniformly scaled objects.} $%
+%}
+
+#-------------------------------------------------------------------------------------------------
+#-------------------------------------------Lighting --------------------------------------------
+#-------------------------------------------------------------------------------------------------
+
+{%
+	%$ Name = {_ModelLightColor} $%
+	%$ Type = {float4} $%
+	%$ Value = {Material’s Main * Light color} $%
+%}
+
+
+{%
+	%$ Name = {_SpecularLightColor} $%
+	%$ Type = {float4} $%
+	%$ Value = {Material’s Specular * Light color} $%
+%}
+
+
+{%
+	%$ Name = {_ObjectSpaceLightPos} $%
+	%$ Type = {float4} $%
+	%$ Value = {Light’s position in object space. w component is 0 for directional lights, 1 for other lights} $%
+%}
+
+
+{%
+	%$ Name = {_Light2World} $%
+	%$ Type = {float4x4} $%
+	%$ Value = {Light to World space matrix} $%
+%}
+
+
+{%
+	%$ Name = {_World2Light} $%
+	%$ Type = {float4x4} $%
+	%$ Value = {World to Light space matrix} $%
+%}
+
+
+{%
+	%$ Name = {_Object2Light} $%
+	%$ Type = {float4x4} $%
+	%$ Value = {Object to Light space matrix} $%
+%}
+
+
+#-------------------------------------------------------------------------------------------------
+#-------------------------------------------Various --------------------------------------------
+#------------------------------------------------------------------------------------------------
+
+{%
+	%$ Name = {_Time} $%
+	%$ Type = {float4} $%
+	%$ Value = {Time (t/20, t, t*2, t*3), use to animate things inside the shaders.} $%
+%}
+
+{%
+	%$ Name = {_SinTime} $%
+	%$ Type = {float4} $%
+	%$ Value = {Sine of time: (t/8, t/4, t/2, t).} $%
+%}
+
+{%
+	%$ Name = {_CosTime} $%
+	%$ Type = {float4} $%
+	%$ Value = {Cosine of time: (t/8, t/4, t/2, t).} $%
+%}
+
+{%
+	%$ Name = {unity_DeltaTime} $%
+	%$ Type = {float4} $%
+	%$ Value = {Delta time: (dt, 1/dt, smoothDt, 1/smoothDt).} $%
+%}
+
+{%
+	%$ Name = {_ProjectionParams} $%
+	%$ Type = {float4} $%
+	%$ Value = {x is 1.0 (or –1.0 if currently rendering with a flipped projection matrix), y is the camera’s near plane, z is the camera’s far plane and w is 1/FarPlane.} $%
+%}
+
+{%
+	%$ Name = {_ScreenParams} $%
+	%$ Type = {float4} $%
+	%$ Value = {x is the current render target width in pixels, y is the current render target height in pixels, z is 1.0 + 1.0/width and w is 1.0 + 1.0/height.} $%
+%}

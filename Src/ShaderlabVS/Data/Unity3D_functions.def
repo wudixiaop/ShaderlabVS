@@ -1,1 +1,11 @@
-﻿
+﻿#
+# A defination for the functions in Unity3D
+#
+# Use the format:
+#	{%
+#		%$ Name = {} $%
+#		%$ Synopsis = {} $%
+#		%$ Description = {} $%
+#	%}
+#
+

@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="DefinationReaderTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DatProviderTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ShaderlabVS.Data\ShaderlabVS.Data.csproj">
@@ -64,6 +65,34 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="..\ShaderlabVS\Data\HLSL_CG_datatype.def">
+      <Link>HLSL_CG_datatype.def</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\ShaderlabVS\Data\HLSL_CG_functions.def">
+      <Link>HLSL_CG_functions.def</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\ShaderlabVS\Data\HLSL_CG_Keywords.def">
+      <Link>HLSL_CG_Keywords.def</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\ShaderlabVS\Data\Unity3D_functions.def">
+      <Link>Unity3D_functions.def</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\ShaderlabVS\Data\Unity3D_keywords.def">
+      <Link>Unity3D_keywords.def</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\ShaderlabVS\Data\Unity3D_macros.def">
+      <Link>Unity3D_macros.def</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\ShaderlabVS\Data\Unity3D_values.def">
+      <Link>Unity3D_values.def</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="test.def">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

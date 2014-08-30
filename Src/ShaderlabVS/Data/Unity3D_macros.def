@@ -1,1 +1,11 @@
-﻿
+﻿#
+# A defination for the macros in Unity3D
+#
+# Use the format:
+#	{%
+#		%$ Name = {} $%
+#		%$ Synopsis = {} $%
+#		%$ Description = {} $%
+#	%}
+#
+
