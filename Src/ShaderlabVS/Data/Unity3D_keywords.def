@@ -1,1 +1,410 @@
-﻿
+﻿#
+# A defination for the functions in Unity3D
+#
+# Use the format:
+#	{%
+#		%$ Name = {} $%
+#		%$ Description = {} $%
+#		%$ Format = {} $%
+#	%}
+#
+
+
+
+{%
+	%$ Name = {pragma} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+{%
+	%$ Name = {include} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+{%
+	%$ Name = {CGPROGRAM} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+{%
+	%$ Name = {ENDCG} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+{%
+	%$ Name = {Shader} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+{%
+	%$ Name = {SubShader} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+{%
+	%$ Name = {FallBack} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+{%
+	%$ Name = {Properties} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+{%
+	%$ Name = {Pass} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+{%
+	%$ Name = {UsePass} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+{%
+	%$ Name = {Tags} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+{%
+	%$ Name = {BindChannels} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+{%
+	%$ Name = {Stencil} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+{%
+	%$ Name = {Material} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+{%
+	%$ Name = {GrabPass} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+{%
+	%$ Name = {LOD} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+{%
+	%$ Name = {Lighting} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+
+{%
+	%$ Name = {SetTexture} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+{%
+	%$ Name = {Cull} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+{%
+	%$ Name = {Fog} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+{%
+	%$ Name = {ZWrite} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+{%
+	%$ Name = {ZTest} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+{%
+	%$ Name = {AlphaTest} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+{%
+	%$ Name = {Blend} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+{%
+	%$ Name = {ColorMask} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+{%
+	%$ Name = {Offset} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+{%
+	%$ Name = {SeparateSpecular} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+{%
+	%$ Name = {ColorMaterial} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+{%
+	%$ Name = {Diffuse} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+{%
+	%$ Name = {Ambient} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+{%
+	%$ Name = {Shininess} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+{%
+	%$ Name = {Specular} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+{%
+	%$ Name = {Emission} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+{%
+	%$ Name = {Combine} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+{%
+	%$ Name = {Mode} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+{%
+	%$ Name = {Density} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+{%
+	%$ Name = {SrcColor} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+{%
+	%$ Name = {SrcAlpha} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+{%
+	%$ Name = {DstColor} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+{%
+	%$ Name = {DstAlpha} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+{%
+	%$ Name = {OneMinusSrcColor} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+{%
+	%$ Name = {OneMinusSrcAlpha} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+{%
+	%$ Name = {OneMinusDstColor} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+{%
+	%$ Name = {OneMinusDstAlpha} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+{%
+	%$ Name = {LightMode} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+{%
+	%$ Name = {Always} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+{%
+	%$ Name = {ForwardBase} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+{%
+	%$ Name = {ForwardAdd} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+{%
+	%$ Name = {PrepassBase} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+
+{%
+	%$ Name = {PrepassFinal} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+{%
+	%$ Name = {Vertex} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+{%
+	%$ Name = {VertexLMRGBM} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+
+{%
+	%$ Name = {VertexLM} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+
+{%
+	%$ Name = {ShadowCaster} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+
+{%
+	%$ Name = {ShadowCollector} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+#|||||||||||||||||||||||||||||
+
+{%
+	%$ Name = {SoftVegetation} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+{%
+	%$ Name = {Name} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+{%
+	%$ Name = {Bind} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+{%
+	%$ Name = {Ref} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+{%
+	%$ Name = {ReadMask} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+{%
+	%$ Name = {WriteMask} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+{%
+	%$ Name = {Comp} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+{%
+	%$ Name = {Fail} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+{%
+	%$ Name = {ZFail} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+
+{%
+	%$ Name = {DOUBLE} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}

@@ -60,3 +60,15 @@
 	} $%
 	%$ Description ={ returns arccosine of scalars and vectors.} $%
 %}
+
+{%
+	%$ Name = {all} $%
+	%$ Synopsis = {
+		bool all(bool a);
+		bool all(bool1 a);
+		bool all(bool2 a);
+		bool all(bool3 a);
+		bool all(bool4 a);
+	} $%
+	%$ Description = {returns true if a boolean scalar or all components of a boolean vector are true.} $%
+%}

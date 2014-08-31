@@ -23,16 +23,16 @@ namespace ShaderlabVS
         internal static ClassificationTypeDefinition ShaderlabCommentType = null;
 
         [Export(typeof(ClassificationTypeDefinition))]
-        [Name(Constants.ShaderlabKeyword)]
+        [Name(Constants.ShaderlabHLSLCGKeyword)]
         internal static ClassificationTypeDefinition ShaderlabKeywordType = null;
 
         [Export(typeof(ClassificationTypeDefinition))]
-        [Name(Constants.ShaderlabUnityBlockKeywords)]
-        internal static ClassificationTypeDefinition ShaderlabUnityBlockKeywords = null;
+        [Name(Constants.ShaderlabUnityKeywords)]
+        internal static ClassificationTypeDefinition ShaderlabUnityKeywordsType = null;
 
         [Export(typeof(ClassificationTypeDefinition))]
-        [Name(Constants.ShaderlabUnityNonBlockKeywords)]
-        internal static ClassificationTypeDefinition ShaderlabUnityNonBlockKeywords = null;
+        [Name(Constants.ShaderlabUnityKeywordsPara)]
+        internal static ClassificationTypeDefinition ShaderlabUnityKeywordsParaType = null;
 
         [Export(typeof(ClassificationTypeDefinition))]
         [Name(Constants.ShaderlabDataType)]

@@ -22,7 +22,6 @@ namespace ShaderlabVS.LexTools
      public int NextToken() { return yylex(); }
      public int GetPos() { return yypos; }
      public int GetLength() { return yyleng; }
-
 	 public void PushbackText(int length) { yyless(length); }
 %}
 
@@ -80,7 +79,7 @@ UNITYBuiltinValues          {$UNITYBuiltinValues$}
 ({white_space}|{symbol}){HLSLCGNonBlockKeyWords}({white_space}|{symbol})				{return (int)ShaderlabToken.HLSLCGKEYWORD;}
 :({blank})*{HLSLCGSpecialKeyWords}({white_space}|{symbol})								{return (int)ShaderlabToken.HLSLCGKEYWORDSPECIAL;}
 ({white_space}|{symbol}){UNITYBuiltinKeywords}{blank}*({white_space}|{symbol})		    {return (int)ShaderlabToken.UNITYKEYWORD;}
-#({white_space}|{symbol}){UNITYBuiltinKeywords}({blank}+{words})*{white_space}		    {return (int)ShaderlabToken.UNITYKEYWORD_PARA;}
+({white_space}|{symbol})#({UNITYBuiltinKeywords})({blank}+{words})*{white_space}	    {return (int)ShaderlabToken.UNITYKEYWORD_PARA;}
 ({white_space}|{symbol}){UNITYBuiltinValues}({white_space}|{symbol})					{return (int)ShaderlabToken.UNITYVALUES;}
 
 /**********Date Type**********/
@@ -104,9 +103,9 @@ UNITYBuiltinValues          {$UNITYBuiltinValues$}
         {
             string convertedFileName = "Shaerlab.lex";
 
-            if (args.Length > 1)
+            if (args.Length > 0)
             {
-                convertedFileName = args[1].Trim();
+                convertedFileName = args[0].Trim();
             }
 
             string lex = lexFormat;

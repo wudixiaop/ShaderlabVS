@@ -83,15 +83,15 @@ namespace ShaderlabVS
     /// keywords
     /// </summary>
     [Export(typeof(EditorFormatDefinition))]
-    [ClassificationType(ClassificationTypeNames = Constants.ShaderlabKeyword)]
-    [Name(Constants.ShaderlabKeyword)]
+    [ClassificationType(ClassificationTypeNames = Constants.ShaderlabHLSLCGKeyword)]
+    [Name(Constants.ShaderlabHLSLCGKeyword)]
     [UserVisible(true)]
     [Order(Before = Priority.Default)]
     internal sealed class ShaderlabKeyword : ClassificationFormatDefinition
     {
         public ShaderlabKeyword()
         {
-            this.DisplayName = Constants.ShaderlabKeyword;
+            this.DisplayName = Constants.ShaderlabHLSLCGKeyword;
             this.ForegroundColor = Colors.Blue;
         }
     }
@@ -100,32 +100,32 @@ namespace ShaderlabVS
     /// Unity3D keywords
     /// </summary>
     [Export(typeof(EditorFormatDefinition))]
-    [ClassificationType(ClassificationTypeNames = Constants.ShaderlabUnityBlockKeywords)]
-    [Name(Constants.ShaderlabUnityBlockKeywords)]
+    [ClassificationType(ClassificationTypeNames = Constants.ShaderlabUnityKeywords)]
+    [Name(Constants.ShaderlabUnityKeywords)]
     [UserVisible(true)]
     [Order(Before = Priority.Default)]
     internal sealed class ShaderlabUnityBlockKeywords : ClassificationFormatDefinition
     {
         public ShaderlabUnityBlockKeywords()
         {
-            this.DisplayName = Constants.ShaderlabUnityBlockKeywords;
+            this.DisplayName = Constants.ShaderlabUnityKeywords;
             this.ForegroundColor = Colors.Blue;
         }
     }
 
     /// <summary>
-    /// Unity3D keywords
+    /// Unity3D keywords begin with #
     /// </summary>
     [Export(typeof(EditorFormatDefinition))]
-    [ClassificationType(ClassificationTypeNames = Constants.ShaderlabUnityNonBlockKeywords)]
-    [Name(Constants.ShaderlabUnityNonBlockKeywords)]
+    [ClassificationType(ClassificationTypeNames = Constants.ShaderlabUnityKeywordsPara)]
+    [Name(Constants.ShaderlabUnityKeywordsPara)]
     [UserVisible(true)]
     [Order(Before = Priority.Default)]
-    internal sealed class ShaderlabUnityNonBlockKeywords : ClassificationFormatDefinition
+    internal sealed class ShaderlabUnityKeywordsPara : ClassificationFormatDefinition
     {
-        public ShaderlabUnityNonBlockKeywords()
+        public ShaderlabUnityKeywordsPara()
         {
-            this.DisplayName = Constants.ShaderlabUnityNonBlockKeywords;
+            this.DisplayName = Constants.ShaderlabUnityKeywordsPara;
             this.ForegroundColor = Colors.DarkMagenta;
         }
     }
