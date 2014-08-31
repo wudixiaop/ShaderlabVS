@@ -9,3 +9,12 @@
 #	%}
 #
 
+#Most of marcos are from here http://docs.unity3d.com/Manual/SL-BuiltinMacros.html 
+
+{%
+	%$ Name = { UNITY_PROJ_COORD } $%
+	%$ Synopsis = {
+		UNITY_PROJ_COORD(a);
+	} $%
+	%$ Description = { given a 4-component vector, return a texture coordinate suitable for projected texture reads. On most platforms this returns the given value directly. } $%
+%}

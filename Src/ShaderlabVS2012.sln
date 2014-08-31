@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShaderlabVS.Data", "Shaderl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShaderlabVS.UnitTest", "ShaderlabVS.UnitTest\ShaderlabVS.UnitTest.csproj", "{7B3B5D1B-E3D9-41C9-B868-3F9C89B57FEC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShaderlabVS.LexTools", "ShaderlabVS.LexTools\ShaderlabVS.LexTools.csproj", "{FABB0EBB-546D-4E42-856B-6A50EF766E9B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{7B3B5D1B-E3D9-41C9-B868-3F9C89B57FEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B3B5D1B-E3D9-41C9-B868-3F9C89B57FEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B3B5D1B-E3D9-41C9-B868-3F9C89B57FEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FABB0EBB-546D-4E42-856B-6A50EF766E9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FABB0EBB-546D-4E42-856B-6A50EF766E9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FABB0EBB-546D-4E42-856B-6A50EF766E9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FABB0EBB-546D-4E42-856B-6A50EF766E9B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

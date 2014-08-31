@@ -9,3 +9,11 @@
 #	%}
 #
 
+{%
+	%$ Name = { UnpackNormal } $%
+	%$ Synopsis = {
+		UnpackNormal (tex2D t2d);
+	} $%
+	%$ Description = { Unpack normal from texture. } $%
+%}
+

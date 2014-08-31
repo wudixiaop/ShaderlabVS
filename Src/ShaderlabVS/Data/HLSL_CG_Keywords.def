@@ -1,5 +1,5 @@
 ﻿#
-# A defination for the built-in values in Unity3D
+# A defination for the keyword of HLSL/CG
 #
 # Use the format:
 #	{%
@@ -11,126 +11,93 @@
 {%
 	%$ Type = {Block} $%
 	%$ AllKeywords = {
-		while
-		if
 		do
-		for
 		else
+		for
+		if
+		switch
+		while
 	} $%
 %}
 
 {%
 	%$ Type = {NonBlock} $%
 	%$ AllKeywords = {
+		BlendState
+		Buffer
+		DepthStencilState
+		DepthStencilView
+		GeometryShader
+		PixelShader
+		RasterizerState
 		RenderTargetView
-		typedef
-		uniform
-		void
-		while
-		numthreads
-		volatile
-		VertexShader
-		SamplerState
 		SamplerComparisonState
-		shared
-		StateblockState
-		static
-		struct
-		switch
-		tbuffer
-		technique
-		technique10
-		technique11
+		SamplerState
 		Stateblock
-		texture
+		StateblockState
+		Texture1D
 		Texture1DArray
+		Texture2D
 		Texture2DArray
 		Texture2DMS
 		Texture2DMSArray
+		Texture3D
 		TextureCube
 		TextureCubeArray
-		Texture3D
-		Texture2D
-		Texture1D
-		register
-		return
-		in
-		inout
-		inline
-		interface
-		namespace
-		linear
-		BlendState
-		centroid
-		nointerpolation
-		noperspective
-		sample
-		out
-		pass
-		precise
-		RasterizerState
+		VertexShader
 		break
-		PixelShader
-		Buffer
 		cbuffer
+		centroid
 		class
 		compile
 		const
 		continue
-		DepthStencilState
-		DepthStencilView
 		discard
 		extern
 		false
+		in
+		inline
+		inout
+		interface
+		linear
+		namespace
+		nointerpolation
+		noperspective
+		numthreads
+		out
+		pass
+		precise
+		register
+		return
+		sample
+		shared
+		static
+		struct
+		tbuffer
+		technique
+		technique10
+		technique11
+		texture
 		true
-		GeometryShader
+		typedef
+		uniform
+		void
+		volatile
 	} $%
 %}
 
 {%
 	%$ Type = {Special} $%
 	%$ AllKeywords = {
-		ALPHATOCOVERAGEENABLE
-		BLENDENABLE
-		SRCBLENDDESTBLEND
-		BLENDOP
-		SRCBLENDALPHA
-		DESTBLENDALPHA
-		BLENDOPALPHA
-		RENDERTARGETWRITEMASK
-		DEPTHENABLE
-		DEPTHWRITEMASK
-		DEPTHFUNC
-		STENCILENABLE
-		STENCILREADMASK
-		STENCILWRITEMASK
-		FRONTFACESTENCILFAIL
-		FRONTFACESTENCILZFAIL
-		FRONTFACESTENCILPASS
-		FRONTFACESTENCILFUNC
-		BACKFACESTENCILFAIL
-		BACKFACESTENCILZFAIL
-		BACKFACESTENCILPASS
-		BACKFACESTENCILFUNC
-		FILLMODE|CULLMODE
-		FRONTCOUNTERCLOCKWISE
-		DEPTHBIAS
-		DEPTHBIASCLAMP
-		SLOPESCALEDDEPTHBIAS
-		ZCLIPENABLE
-		SCISSORENABLE
-		MULTISAMPLEENABLE
-		ANTIALIASEDLINEENABLE
-		FILTER
 		ADDRESSU
 		ADDRESSV
 		ADDRESSW
-		MIPLODBIAS
-		MAXANISOTROPY
-		COMPARISONFUNC
-		BORDERCOLOR
-		MINLOD
-		MAXLOD
+		ALPHATOCOVERAGEENABLE
+		ANTIALIASEDLINEENABLE
+		BACKFACESTENCILFAIL
+		BACKFACESTENCILFUNC
+		BACKFACESTENCILPASS
+		BACKFACESTENCILZFAIL
 		BINORMAL
 		BINORMAL0
 		BINORMAL1
@@ -144,6 +111,7 @@
 		BINORMAL7
 		BINORMAL8
 		BINORMAL9
+		BLENDENABLE
 		BLENDINDICES
 		BLENDINDICES0
 		BLENDINDICES1
@@ -157,6 +125,8 @@
 		BLENDINDICES7
 		BLENDINDICES8
 		BLENDINDICES9
+		BLENDOP
+		BLENDOPALPHA
 		BLENDWEIGHTS
 		BLENDWEIGHTS0
 		BLENDWEIGHTS1
@@ -170,6 +140,7 @@
 		BLENDWEIGHTS7
 		BLENDWEIGHTS8
 		BLENDWEIGHTS9
+		BORDERCOLOR
 		COLOR
 		COLOR0
 		COLOR1
@@ -187,6 +158,13 @@
 		COLOR7
 		COLOR8
 		COLOR9
+		COMPARISONFUNC
+		DEPTHBIAS
+		DEPTHBIASCLAMP
+		DEPTHENABLE
+		DEPTHFUNC
+		DEPTHWRITEMASK
+		DESTBLENDALPHA
 		DIFFUSE
 		DIFFUSE0
 		DIFFUSE1
@@ -200,7 +178,19 @@
 		DIFFUSE7
 		DIFFUSE8
 		DIFFUSE9
+		FILLMODE|CULLMODE
+		FILTER
 		FOG
+		FRONTCOUNTERCLOCKWISE
+		FRONTFACESTENCILFAIL
+		FRONTFACESTENCILFUNC
+		FRONTFACESTENCILPASS
+		FRONTFACESTENCILZFAIL
+		MAXANISOTROPY
+		MAXLOD
+		MINLOD
+		MIPLODBIAS
+		MULTISAMPLEENABLE
 		NORMAL
 		NORMAL0
 		NORMAL1
@@ -240,6 +230,10 @@
 		PSIZE7
 		PSIZE8
 		PSIZE9
+		REGISTER
+		RENDERTARGETWRITEMASK
+		SCISSORENABLE
+		SLOPESCALEDDEPTHBIAS
 		SPECULAR
 		SPECULAR0
 		SPECULAR1
@@ -253,6 +247,11 @@
 		SPECULAR7
 		SPECULAR8
 		SPECULAR9
+		SRCBLENDALPHA
+		SRCBLENDDESTBLEND
+		STENCILENABLE
+		STENCILREADMASK
+		STENCILWRITEMASK
 		SV_CLIPDISTANCE
 		SV_CLIPDISTANCE1
 		SV_CLIPDISTANCE10
@@ -350,6 +349,6 @@
 		TEXCOORD9
 		VFACE
 		VPOS
-		REGISTER
+		ZCLIPENABLE
 	} $%
 %}

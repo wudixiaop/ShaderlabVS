@@ -1,1 +1,95 @@
-﻿
+﻿#
+# A defination for the functions in HLSL/CG
+#
+# Use the format:
+#		{%
+#			%$ Alltypes = { } $%
+#		%}
+#
+
+
+{%
+	%$ Alltypes = {
+		AppendStructuredBuffer
+		Buffer
+		ByteAddressBuffer
+		ConsumeStructuredBuffer
+		InputPatch
+		LineStream
+		OutputPatch
+		PointStream
+		RWBuffer
+		RWByteAddressBuffer
+		RWStructuredBuffer
+		RWTexture1D
+		RWTexture1DArray
+		RWTexture2D
+		RWTexture2DArray
+		RWTexture3D
+		StructuredBuffer
+		Texture1D
+		Texture1DArray
+		Texture2D
+		Texture2DArray
+		Texture2DMS
+		Texture2DMSArray
+		Texture3D
+		TriangleStream
+		bool
+		bool2
+		bool3
+		bool4
+		double
+		double2
+		double3
+		double4
+		fixed
+		fixed2
+		fixed3
+		fixed4
+		float
+		float1x1
+		float1x2
+		float1x3
+		float1x4
+		float2
+		float2x1
+		float2x2
+		float2x3
+		float2x4
+		float3
+		float3x1
+		float3x2
+		float3x3
+		float3x4
+		float4
+		float4x1
+		float4x2
+		float4x3
+		float4x4
+		half
+		half2
+		half3
+		half4
+		int
+		int2
+		int3
+		int4
+		line
+		lineadj
+		matrix
+		point
+		sampler
+		sampler2D
+		sampler3D
+		samplerCUBE
+		string
+		triangle
+		triangleadj
+		uint
+		uint2
+		uint3
+		uint4
+		vector
+	} $%
+%}

@@ -11,7 +11,7 @@ namespace ShaderlabVS.UnitTest
         [TestMethod]
         public void ParseTest()
         {
-            DefinationReader dr = new DefinationReader("test.def");
+            DefinationReader dr = new DefinationReader("Data\\test.def");
             dr.Read();
             StringBuilder sb = new StringBuilder();
             foreach (var section in dr.Sections)

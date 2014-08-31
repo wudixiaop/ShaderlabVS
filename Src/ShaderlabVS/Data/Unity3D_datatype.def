@@ -1,0 +1,66 @@
+﻿#
+# A defination for the functions in Unity3D
+#
+# Use the format:
+#	{%
+#		%$ Name = {} $%
+#		%$ Description = {} $%
+#	%}
+#
+
+{%
+	%$ Name = { Color } $%
+	%$ Description = {  } $%
+%}
+
+{%
+	%$ Name = { 2D } $%
+	%$ Description = {  } $%
+%}
+
+{%
+	%$ Name = { Rect } $%
+	%$ Description = { Cube } $%
+%}
+
+
+{%
+	%$ Name = { Float } $%
+	%$ Description = {  } $%
+%}
+
+
+{%
+	%$ Name = { Range } $%
+	%$ Description = { Range( float, float) } $%
+%}
+
+
+{%
+	%$ Name = { Vector } $%
+	%$ Description = { appdata_base } $%
+%}
+
+
+{%
+	%$ Name = { appdata_tan } $%
+	%$ Description = {  } $%
+%}
+
+
+{%
+	%$ Name = { appdata_full } $%
+	%$ Description = {  } $%
+%}
+
+
+{%
+	%$ Name = { appdata_img } $%
+	%$ Description = {  } $%
+%}
+
+
+{%
+	%$ Name = { SurfaceOutput } $%
+	%$ Description = {  } $%
+%}
