@@ -72,6 +72,7 @@ namespace ShaderlabVS
             classTypeDict.Add(ShaderlabToken.UNITYDATATYPE, registerService.GetClassificationType(Constants.ShaderlabDataType));
             classTypeDict.Add(ShaderlabToken.UNITYFUNCTION, registerService.GetClassificationType(Constants.ShaderlabFunction));
             classTypeDict.Add(ShaderlabToken.STRING_LITERAL, registerService.GetClassificationType(Constants.ShaderlabStrings));
+            classTypeDict.Add(ShaderlabToken.UNITYVALUES, registerService.GetClassificationType(Constants.ShaderlabUnityKeywords));
             classTypeDict.Add(ShaderlabToken.UNDEFINED, registerService.GetClassificationType(Constants.ShaderlabText));
         }
 
@@ -110,6 +111,7 @@ namespace ShaderlabVS
                         case ShaderlabToken.UNITYFUNCTION:
                         case ShaderlabToken.UNITYMACROS:
                         case ShaderlabToken.UNITYDATATYPE:
+                        case ShaderlabToken.UNITYVALUES:
                             length = length - 2;
                             scanner.PushbackText(length + 1);
                             break;
