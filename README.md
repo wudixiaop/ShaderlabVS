@@ -5,8 +5,8 @@ A Visual Studio Plugin for Unity3D Shader.
 
 
 ####Features:
-* Syntax Hightlighting
-
+* Syntax Hightlighting [**Done**]
+* Quickinfo [*Working on...*]
 
 ####How to build:
 1. Download Visual Studio 2012 SDK from [Here](http://www.microsoft.com/en-us/download/details.aspx?id=30668)

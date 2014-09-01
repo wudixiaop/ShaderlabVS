@@ -42,6 +42,7 @@
     <Reference Include="Microsoft.VisualStudio.CoreUtility, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <Private>False</Private>
     </Reference>
+    <Reference Include="Microsoft.VisualStudio.Language.Intellisense, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.VisualStudio.Text.Data, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <Private>False</Private>
     </Reference>
@@ -69,6 +70,7 @@
   <ItemGroup>
     <Compile Include="Constants.cs" />
     <Compile Include="Shaderlab.cs" />
+    <Compile Include="ShaderlabQuickInfo.cs" />
     <Compile Include="ShaderlabToken.cs" />
     <Compile Include="ShaderlabVSFormat.cs" />
     <Compile Include="ShaderlabVSType.cs" />
@@ -85,16 +87,30 @@
     <None Include="TestFiles\C01.compute" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Data\HLSL_CG_datatype.def" />
-    <Content Include="Data\HLSL_CG_functions.def" />
-    <Content Include="Data\HLSL_CG_Keywords.def">
-      <IncludeInVSIX>true</IncludeInVSIX>
+    <Content Include="Data\HLSL_CG_datatype.def">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Data\Unity3D_functions.def" />
-    <Content Include="Data\Unity3D_keywords.def" />
-    <Content Include="Data\Unity3D_macros.def" />
-    <Content Include="Data\Unity3D_values.def" />
-    <Content Include="Data\Unity3D_datatype.def" />
+    <Content Include="Data\HLSL_CG_functions.def">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\HLSL_CG_Keywords.def">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Unity3D_functions.def">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Unity3D_keywords.def">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Unity3D_macros.def">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Unity3D_values.def">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Unity3D_datatype.def">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="gplex.exe" />
   </ItemGroup>
   <ItemGroup>
