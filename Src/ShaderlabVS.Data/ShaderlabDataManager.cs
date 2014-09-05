@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -69,24 +71,25 @@ namespace ShaderlabVS.Data
 
         private ShaderlabDataManager()
         {
-            HLSLCGFunctions = DefinationDataProvider<HLSLCGFunction>.ProvideFromFile(ShaderlabDataManager.HLSL_CG_FUNCTION_DEFINATIONFILE);
+            string currentAssemblyDir = (new FileInfo(Assembly.GetExecutingAssembly().CodeBase.Substring(8))).DirectoryName;
+            HLSLCGFunctions = DefinationDataProvider<HLSLCGFunction>.ProvideFromFile(Path.Combine(currentAssemblyDir, ShaderlabDataManager.HLSL_CG_FUNCTION_DEFINATIONFILE));
 
-            List<HLSLCGKeywords> hlslcgKeywords = DefinationDataProvider<HLSLCGKeywords>.ProvideFromFile(ShaderlabDataManager.HLSL_CG_KEYWORD_DEFINATIONFILE);
+            List<HLSLCGKeywords> hlslcgKeywords = DefinationDataProvider<HLSLCGKeywords>.ProvideFromFile(Path.Combine(currentAssemblyDir, ShaderlabDataManager.HLSL_CG_KEYWORD_DEFINATIONFILE));
             HLSLCGBlockKeywords = GetHLSLCGKeywordsByType(hlslcgKeywords, "block");
             HLSLCGNonblockKeywords = GetHLSLCGKeywordsByType(hlslcgKeywords, "nonblock");
             HLSLCGSpecialKeywords = GetHLSLCGKeywordsByType(hlslcgKeywords, "special");
 
-            var dts = DefinationDataProvider<HLSLCGDataTypes>.ProvideFromFile(ShaderlabDataManager.HLSL_CG_DATATYPE_DEFINATIONFILE).First();
+            var dts = DefinationDataProvider<HLSLCGDataTypes>.ProvideFromFile(Path.Combine(currentAssemblyDir, ShaderlabDataManager.HLSL_CG_DATATYPE_DEFINATIONFILE)).First();
             if (dts != null)
             {
                 HLSLCGDatatypes = dts.DataTypes;
             }
 
-            UnityBuiltinDatatypes = DefinationDataProvider<UnityBuiltinDatatype>.ProvideFromFile(ShaderlabDataManager.UNITY3D_DATATYPE_DEFINATIONFILE);
-            UnityBuiltinFunctions = DefinationDataProvider<UnityBuiltinFunction>.ProvideFromFile(ShaderlabDataManager.UNITY3D_FUNCTION_DEFINATIONFILE);
-            UnityBuiltinMacros = DefinationDataProvider<UnityBuiltinMacros>.ProvideFromFile(ShaderlabDataManager.UNITY3D_MACROS_DEFINATIONFILE);
-            UnityBuiltinValues = DefinationDataProvider<UnityBuiltinValue>.ProvideFromFile(ShaderlabDataManager.UNITY3D_VALUES_DEFINATIONFILE);
-            UnityKeywords = DefinationDataProvider<UnityKeywords>.ProvideFromFile(ShaderlabDataManager.UNITY3D_KEYWORD_DEFINATIONFILE);
+            UnityBuiltinDatatypes = DefinationDataProvider<UnityBuiltinDatatype>.ProvideFromFile(Path.Combine(currentAssemblyDir, ShaderlabDataManager.UNITY3D_DATATYPE_DEFINATIONFILE));
+            UnityBuiltinFunctions = DefinationDataProvider<UnityBuiltinFunction>.ProvideFromFile(Path.Combine(currentAssemblyDir, ShaderlabDataManager.UNITY3D_FUNCTION_DEFINATIONFILE));
+            UnityBuiltinMacros = DefinationDataProvider<UnityBuiltinMacros>.ProvideFromFile(Path.Combine(currentAssemblyDir, ShaderlabDataManager.UNITY3D_MACROS_DEFINATIONFILE));
+            UnityBuiltinValues = DefinationDataProvider<UnityBuiltinValue>.ProvideFromFile(Path.Combine(currentAssemblyDir, ShaderlabDataManager.UNITY3D_VALUES_DEFINATIONFILE));
+            UnityKeywords = DefinationDataProvider<UnityKeywords>.ProvideFromFile(Path.Combine(currentAssemblyDir, ShaderlabDataManager.UNITY3D_KEYWORD_DEFINATIONFILE));
 
         }
 

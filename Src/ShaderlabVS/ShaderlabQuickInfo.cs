@@ -203,7 +203,7 @@ namespace ShaderlabVS
 
                 if (!controllerProvider.QuickInfoBroker.IsQuickInfoActive(this.textView))
                 {
-                    quickInfoSession = controllerProvider.QuickInfoBroker.CreateQuickInfoSession(textView, point, true);
+                    quickInfoSession = controllerProvider.QuickInfoBroker.TriggerQuickInfo(textView, point, true);
                 }
             }
         }
