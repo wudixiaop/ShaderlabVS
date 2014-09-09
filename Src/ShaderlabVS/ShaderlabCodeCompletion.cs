@@ -206,8 +206,7 @@ namespace ShaderlabVS
             }
 
             if (nCmdID == (uint)VSConstants.VSStd2KCmdID.RETURN
-                || cmdID == (uint)VSConstants.VSStd2KCmdID.TAB
-                || char.IsWhiteSpace(typedChar))
+                || cmdID == (uint)VSConstants.VSStd2KCmdID.TAB)
             {
                 if (completionSession != null && !completionSession.IsDismissed)
                 {

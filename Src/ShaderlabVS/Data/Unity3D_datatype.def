@@ -32,7 +32,7 @@
 
 {%
 	%$ Name = { Range } $%
-	%$ Description = { Range( float, float) } $%
+	%$ Description = { Range(float, float) } $%
 %}
 
 
