@@ -38,9 +38,14 @@
 
 {%
 	%$ Name = { Vector } $%
-	%$ Description = { appdata_base } $%
+	%$ Description = {  } $%
 %}
 
+
+{%
+	%$ Name = { appdata_base } $%
+	%$ Description = {  } $%
+%}
 
 {%
 	%$ Name = { appdata_tan } $%
