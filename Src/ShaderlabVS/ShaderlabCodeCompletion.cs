@@ -107,7 +107,7 @@ namespace ShaderlabVS
                 });
 
             // values/enums
-            ImageSource valuesImage = GetImageFromAssetByName("Enum.png");
+            ImageSource valuesImage = GetImageFromAssetByName("Values.png");
 
             ShaderlabDataManager.Instance.UnityBuiltinValues.ForEach(v =>
                 {

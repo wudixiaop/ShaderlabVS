@@ -92,10 +92,6 @@
     <None Include="TestFiles\C01.compute" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\Enum.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <IncludeInVSIX>true</IncludeInVSIX>
-    </Content>
     <Content Include="Assets\Keywords.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
@@ -107,6 +103,10 @@
     <Content Include="Assets\Structure.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Assets\Values.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Data\HLSL_CG_datatype.def">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
