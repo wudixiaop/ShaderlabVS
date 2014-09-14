@@ -5,9 +5,21 @@ A Visual Studio Plugin for Unity3D Shader.
 
 
 ####Features:
-* Syntax Hightlighting [**Done**]
-* Quickinfo [**Done**]
-* Code Completion [*Working on*]
+* Syntax Hightlighting 
+* Quickinfo
+* Code Completion
+* Signature Help
+
+####Screenshot Preview
+
+* Syntax Hightlighting 
+	![](./img/Highlighting.PNG)
+* Quickinfo
+	![](./img/QuickInfo.png)
+* Code Completion
+	![](./img/CodeCompletion.png)
+* Signature help for CG and Unity3d built in functions
+	![](./img/SignatureHelp.png)
 
 ####How to build:
 1. Download Visual Studio SDK

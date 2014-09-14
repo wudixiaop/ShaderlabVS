@@ -76,6 +76,7 @@
     <Compile Include="Shaderlab.cs" />
     <Compile Include="ShaderlabCodeCompletion.cs" />
     <Compile Include="ShaderlabQuickInfo.cs" />
+    <Compile Include="ShaderlabSignatureHelp.cs" />
     <Compile Include="ShaderlabToken.cs" />
     <Compile Include="ShaderlabVSFormat.cs" />
     <Compile Include="ShaderlabVSType.cs" />
