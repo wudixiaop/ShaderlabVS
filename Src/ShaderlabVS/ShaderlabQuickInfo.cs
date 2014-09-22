@@ -71,13 +71,15 @@ namespace ShaderlabVS
 
             ShaderlabDataManager.Instance.UnityBuiltinMacros.ForEach((f) =>
                 {
+
+                    string description = string.Format("{0}\n{1}", string.Join(";\n", f.Synopsis), f.Description);
                     if (quickInfos.ContainsKey(f.Name))
                     {
-                        quickInfos[f.Name] = quickInfos[f.Name] + string.Format("\nUnity3D built-in macros: {0}", f.Description);
+                        quickInfos[f.Name] = quickInfos[f.Name] + string.Format("\nUnity3D built-in macros: {0}", description);
                     }
                     else
                     {
-                        quickInfos.Add(f.Name, f.Description);
+                        quickInfos.Add(f.Name, description);
                     }
                 });
 

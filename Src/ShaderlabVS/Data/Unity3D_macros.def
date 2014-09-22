@@ -11,10 +11,268 @@
 
 #Most of marcos are from here http://docs.unity3d.com/Manual/SL-BuiltinMacros.html 
 
+
+#-----------------------------Surface shader pass indicators -------------------#
+#------------------------------------------------------------------------------#
+
+{%
+	%$ Name = {UNITY_PASS_FORWARDBASE} $%
+	%$ Synopsis = {} $%
+	%$ Description = {forward rendering base pass (main directional light, lightmaps, SH).} $%
+%}
+
+{%
+	%$ Name = {UNITY_PASS_FORWARDADD} $%
+	%$ Synopsis = {} $%
+	%$ Description = { forward rendering additive pass (one light per pass).} $%
+%}
+
+{%
+	%$ Name = {UNITY_PASS_PREPASSBASE} $%
+	%$ Synopsis = {} $%
+	%$ Description = {deferred lighting base pass (renders normals & specular exponent).} $%
+%}
+
+{%
+	%$ Name = {UNITY_PASS_PREPASSFINAL} $%
+	%$ Synopsis = {} $%
+	%$ Description = {deferred lighting final pass (applies lighting & textures).} $%
+%}
+
+{%
+	%$ Name = {UNITY_PASS_SHADOWCASTER} $%
+	%$ Synopsis = {} $%
+	%$ Description = {shadow caster rendering pass.} $%
+%}
+
+{%
+	%$ Name = {UNITY_PASS_SHADOWCOLLECTOR} $%
+	%$ Synopsis = {} $%
+	%$ Description = {shadow “gathering” pass for directional light shadows.} $%
+%}
+
+#-----------------------------Target platform ---------------------------------#
+#-----------------------------------------------------------------------------#
+
+{%
+	%$ Name = {SHADER_API_OPENGL} $%
+	%$ Synopsis = {} $%
+	%$ Description = {desktop OpenGL} $%
+%}
+
+{%
+	%$ Name = {SHADER_API_D3D9} $%
+	%$ Synopsis = {} $%
+	%$ Description = {Direct3D 9} $%
+%}
+
+{%
+	%$ Name = {SHADER_API_XBOX360} $%
+	%$ Synopsis = {} $%
+	%$ Description = {Xbox 360} $%
+%}
+
+{%
+	%$ Name = {SHADER_API_PS3} $%
+	%$ Synopsis = {} $%
+	%$ Description = {PlayStation 3} $%
+%}
+
+{%
+	%$ Name = {SHADER_API_D3D11} $%
+	%$ Synopsis = {} $%
+	%$ Description = {desktop Direct3D 11} $%
+%}
+
+{%
+	%$ Name = {SHADER_API_GLES} $%
+	%$ Synopsis = {} $%
+	%$ Description = {OpenGL ES 2.0 (desktop or mobile), use presence of SHADER_API_MOBILE to determine.} $%
+%}
+
+{%
+	%$ Name = {SHADER_API_FLASH} $%
+	%$ Synopsis = {} $%
+	%$ Description = {Flash Stage3D} $%
+%}
+
+{%
+	%$ Name = {SHADER_API_D3D11_9X } $%
+	%$ Synopsis = {} $%
+	%$ Description = { Direct3D 11 target for Windows RT} $%
+%}
+
+{%
+	%$ Name = {SHADER_API_MOBILE } $%
+	%$ Synopsis = {} $%
+	%$ Description = {defined for SHADER_API_GLES when compiling for “mobile” platform (iOS/Android); and not defined when compiling for “desktop” (NativeClient).} $%
+%}
+
+#-----------------------------Platform difference helpers -------------------#
+#------------------------------------------------------------------------------
+
 {%
 	%$ Name = { UNITY_PROJ_COORD } $%
 	%$ Synopsis = {
 		UNITY_PROJ_COORD(a);
 	} $%
 	%$ Description = { given a 4-component vector, return a texture coordinate suitable for projected texture reads. On most platforms this returns the given value directly. } $%
+%}
+
+{%
+	%$ Name = {UNITY_ATTEN_CHANNEL } $%
+	%$ Synopsis = {} $%
+	%$ Description = { which channel of light attenuation texture contains the data; used in per-pixel lighting code. Defined to either ‘r’ or ‘a’.} $%
+%}
+
+{%
+	%$ Name = {UNITY_HALF_TEXEL_OFFSET } $%
+	%$ Synopsis = {} $%
+	%$ Description = { defined on platforms that need a half-texel offset adjustment in mapping texels to pixels (e.g. Direct3D 9).} $%
+%}
+
+{%
+	%$ Name = {UNITY_UV_STARTS_AT_TOP} $%
+	%$ Synopsis = {} $%
+	%$ Description = { 
+	always defined with value or 1 or 0; value of one is on platforms where texture V coordinate is zero at “top of the texture”. 
+	Direct3D-like platforms use value of 1; OpenGL-like platforms use value of 0.} $%
+%}
+
+{%
+	%$ Name = {UNITY_MIGHT_NOT_HAVE_DEPTH_TEXTURE } $%
+	%$ Synopsis = {} $%
+	%$ Description = {defined if a platform might emulate shadow maps or depth textures by manually rendering depth into a texture.} $%
+%}
+
+{%
+	%$ Name = {UNITY_NEAR_CLIP_VALUE } $%
+	%$ Synopsis = {} $%
+	%$ Description = { defined to the value of near clipping plane; Direct3D-like platforms use 0.0 while OpenGL-like platforms use –1.0.} $%
+%}
+
+{%
+	%$ Name = {UNITY_COMPILER_CG} $%
+	%$ Synopsis = {} $%
+	%$ Description = {determine which underlying shader compiler is used; use in case of subtle syntax differences force you to write different shader code.} $%
+%}
+
+
+{%
+	%$ Name = {UNITY_COMPILER_HLSL } $%
+	%$ Synopsis = {} $%
+	%$ Description = {determine which underlying shader compiler is used; use in case of subtle syntax differences force you to write different shader code.} $%
+%}
+
+
+
+{%
+	%$ Name = {UNITY_COMPILER_HLSL2GLSL } $%
+	%$ Synopsis = {} $%
+	%$ Description = {determine which underlying shader compiler is used; use in case of subtle syntax differences force you to write different shader code.} $%
+%}
+
+
+
+{%
+	%$ Name = {UNITY_CAN_COMPILE_TESSELLATION } $%
+	%$ Synopsis = {} $%
+	%$ Description = {defined when the shader compiler “understands” tessellation shader HLSL syntax (currently only D3D11).} $%
+%}
+
+
+
+{%
+	%$ Name = {UNITY_INITIALIZE_OUTPUT} $%
+	%$ Synopsis = {UNITY_INITIALIZE_OUTPUT(type,name)} $%
+	%$ Description = { initialize variable name of given type to zero.} $%
+%}
+
+
+
+{%
+	%$ Name = {UNITY_COMPILER_HLSL} $%
+	%$ Synopsis = {} $%
+	%$ Description = {
+	indicates which shader compiler is being used to compile shaders. 
+	Respectively, Microsoft’s HLSL (used for DX11, Xbox360, WinRT), 
+	HLSL to GLSL translator (used for iOS/Android and desktop OpenGL when #pragma glsl), 
+	and NVIDIA’s Cg (used for D3D9 and non-GLSL desktop OpenGL targets). 
+	Use this if you run into very specific corner case shader syntax handling differences between the compilers, 
+	and want to write different code for each compiler.} $%
+%}
+
+
+
+{%
+	%$ Name = {UNITY_COMPILER_HLSL2GLSL} $%
+	%$ Synopsis = {} $%
+	%$ Description = {
+	indicates which shader compiler is being used to compile shaders. 
+	Respectively, Microsoft’s HLSL (used for DX11, Xbox360, WinRT), 
+	HLSL to GLSL translator (used for iOS/Android and desktop OpenGL when #pragma glsl), 
+	and NVIDIA’s Cg (used for D3D9 and non-GLSL desktop OpenGL targets). 
+	Use this if you run into very specific corner case shader syntax handling differences between the compilers, 
+	and want to write different code for each compiler.} $%
+%}
+
+
+
+{%
+	%$ Name = {UNITY_COMPILER_CG } $%
+	%$ Synopsis = {} $%
+	%$ Description = {
+	indicates which shader compiler is being used to compile shaders. 
+	Respectively, Microsoft’s HLSL (used for DX11, Xbox360, WinRT), 
+	HLSL to GLSL translator (used for iOS/Android and desktop OpenGL when #pragma glsl), 
+	and NVIDIA’s Cg (used for D3D9 and non-GLSL desktop OpenGL targets). 
+	Use this if you run into very specific corner case shader syntax handling differences between the compilers, 
+	and want to write different code for each compiler.} $%
+%}
+
+
+#-----------------------------Shadow mapping macros -------------------#
+#----------------------------------------------------------------------#
+
+
+{%
+	%$ Name = {UNITY_DECLARE_SHADOWMAP} $%
+	%$ Synopsis = {UNITY_DECLARE_SHADOWMAP(tex)} $%
+	%$ Description = {declares a shadowmap texture variable with name “tex”.} $%
+%}
+
+
+
+{%
+	%$ Name = {UNITY_SAMPLE_SHADOW} $%
+	%$ Synopsis = {UNITY_SAMPLE_SHADOW(tex,uv) } $%
+	%$ Description = { samples shadowmap texture “tex” at given “uv” coordinate (XY components are texture location, Z component is depth to compare with). Returns single float value with the shadow term in 0..1 range.} $%
+%}
+
+
+
+{%
+	%$ Name = {UNITY_SAMPLE_SHADOW_PROJ} $%
+	%$ Synopsis = {UNITY_SAMPLE_SHADOW_PROJ(tex,uv)} $%
+	%$ Description = { similar to above, but does a projective shadowmap read. “uv” is a float4, all other components are divided by .w for doing the lookup.} $%
+%}
+
+
+
+#-----------------------------Constant buffer macros -------------------#
+#----------------------------------------------------------------------#
+
+
+{%
+	%$ Name = {CBUFFER_START} $%
+	%$ Synopsis = {Use CBUFFER_START(name)} $%
+	%$ Description = {} $%
+%}
+
+
+
+{%
+	%$ Name = { CBUFFER_END} $%
+	%$ Synopsis = {} $%
+	%$ Description = {} $%
 %}

@@ -63,10 +63,7 @@ namespace ShaderlabVS
                     completionList.Add(new Completion(f.Name, f.Name, f.Description, functionsImage, null));
                 });
 
-            ShaderlabDataManager.Instance.UnityBuiltinMacros.ForEach(m =>
-                {
-                    completionList.Add(new Completion(m.Name, m.Name, m.Description, functionsImage, null));
-                });
+            
 
             // Datatypes
             //
@@ -113,6 +110,22 @@ namespace ShaderlabVS
                 {
                     completionList.Add(new Completion(v.Name, v.Name, v.VauleDescription, valuesImage, null));
                 });
+
+
+            // Macros
+            // 
+            ShaderlabDataManager.Instance.UnityBuiltinMacros.ForEach(m =>
+            {
+                string description = string.Format("{0}\n{1}", string.Join(";\n", m.Synopsis), m.Description);
+                if (m.Synopsis.Count > 0)
+                {
+                    completionList.Add(new Completion(m.Name, m.Name, description, functionsImage, null));
+                }
+                else
+                {
+                    completionList.Add(new Completion(m.Name, m.Name, description, valuesImage, null));
+                }
+            });
 
             completionSets.Add(new CompletionSet("Token", "Token", FindTokenSpanAtPosition(session.GetTriggerPoint(this.textBuffer), session), completionList, null));
         }
