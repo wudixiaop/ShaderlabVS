@@ -17,6 +17,9 @@
 		if
 		switch
 		while
+		ifdef
+		endif
+		elif
 	} $%
 %}
 

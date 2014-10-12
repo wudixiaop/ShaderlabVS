@@ -79,7 +79,7 @@ UNITYBuiltinValues          {$UNITYBuiltinValues$}
 ({white_space}|{symbol}){HLSLCGNonBlockKeyWords}({white_space}|{symbol})				{return (int)ShaderlabToken.HLSLCGKEYWORD;}
 :({blank})*{HLSLCGSpecialKeyWords}({white_space}|{symbol})								{return (int)ShaderlabToken.HLSLCGKEYWORDSPECIAL;}
 ({white_space}|{symbol}){UNITYBuiltinKeywords}{blank}*({white_space}|{symbol})		    {return (int)ShaderlabToken.UNITYKEYWORD;}
-({white_space}|{symbol})#({UNITYBuiltinKeywords})({blank}+{words})*{white_space}	    {return (int)ShaderlabToken.UNITYKEYWORD_PARA;}
+({white_space}|{symbol})#({UNITYBuiltinKeywords}|{HLSLCGBlockKeyWords})({blank}+{words})*{white_space}	    {return (int)ShaderlabToken.UNITYKEYWORD_PARA;}
 ({white_space}|{symbol}){UNITYBuiltinValues}({white_space}|{symbol})					{return (int)ShaderlabToken.UNITYVALUES;}
 
 /**********Date Type**********/
