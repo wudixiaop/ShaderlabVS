@@ -109,16 +109,16 @@ UNITYBuiltinValues          {$UNITYBuiltinValues$}
             }
 
             string lex = lexFormat;
-            lex = lex.Replace("{$HLSLCGBlockKeyWords$}", string.Join("|", ShaderlabDataManager.Instance.HLSLCGBlockKeywords));
-            lex = lex.Replace("{$HLSLCGNonBlockKeyWords$}", string.Join("|", ShaderlabDataManager.Instance.HLSLCGNonblockKeywords));
-            lex = lex.Replace("{$HLSLCGSpecialKeyWords$}", string.Join("|", ShaderlabDataManager.Instance.HLSLCGSpecialKeywords));
-            lex = lex.Replace("{$HLSLCGDatatypes$}", string.Join("|", ShaderlabDataManager.Instance.HLSLCGDatatypes));
-            lex = lex.Replace("{$HLSLCGFunctions$}", string.Join("|", ShaderlabDataManager.Instance.HLSLCGFunctions.Select(f => f.Name).ToList()));
-            lex = lex.Replace("{$UNITYBuiltinDataTypes$}", string.Join("|", ShaderlabDataManager.Instance.UnityBuiltinDatatypes.Select(d => d.Name).ToList()));
-            lex = lex.Replace("{$UNITYBuiltinFunctions$}", string.Join("|", ShaderlabDataManager.Instance.UnityBuiltinFunctions.Select(f => f.Name).ToList()));
-            lex = lex.Replace("{$UNITYBuiltinMacros$}", string.Join("|", ShaderlabDataManager.Instance.UnityBuiltinMacros.Select(m => m.Name).ToList()));
-            lex = lex.Replace("{$UNITYBuiltinValues$}", string.Join("|", ShaderlabDataManager.Instance.UnityBuiltinValues.Select(v => v.Name).ToList()));
-            lex = lex.Replace("{$UNITYBuiltinKeywords$}", string.Join("|", ShaderlabDataManager.Instance.UnityKeywords.Select(k => k.Name).ToList()));
+            lex = lex.Replace("{$HLSLCGBlockKeyWords$}", string.Join("|", ShaderlabDataManager.Instance.HLSLCGBlockKeywords).ToLower());
+            lex = lex.Replace("{$HLSLCGNonBlockKeyWords$}", string.Join("|", ShaderlabDataManager.Instance.HLSLCGNonblockKeywords).ToLower());
+            lex = lex.Replace("{$HLSLCGSpecialKeyWords$}", string.Join("|", ShaderlabDataManager.Instance.HLSLCGSpecialKeywords).ToLower());
+            lex = lex.Replace("{$HLSLCGDatatypes$}", string.Join("|", ShaderlabDataManager.Instance.HLSLCGDatatypes).ToLower());
+            lex = lex.Replace("{$HLSLCGFunctions$}", string.Join("|", ShaderlabDataManager.Instance.HLSLCGFunctions.Select(f => f.Name).ToList()).ToLower());
+            lex = lex.Replace("{$UNITYBuiltinDataTypes$}", string.Join("|", ShaderlabDataManager.Instance.UnityBuiltinDatatypes.Select(d => d.Name).ToList()).ToLower());
+            lex = lex.Replace("{$UNITYBuiltinFunctions$}", string.Join("|", ShaderlabDataManager.Instance.UnityBuiltinFunctions.Select(f => f.Name).ToList()).ToLower());
+            lex = lex.Replace("{$UNITYBuiltinMacros$}", string.Join("|", ShaderlabDataManager.Instance.UnityBuiltinMacros.Select(m => m.Name).ToList()).ToLower());
+            lex = lex.Replace("{$UNITYBuiltinValues$}", string.Join("|", ShaderlabDataManager.Instance.UnityBuiltinValues.Select(v => v.Name).ToList()).ToLower());
+            lex = lex.Replace("{$UNITYBuiltinKeywords$}", string.Join("|", ShaderlabDataManager.Instance.UnityKeywords.Select(k => k.Name).ToList()).ToLower());
 
             File.WriteAllText(convertedFileName, lex);
         }
