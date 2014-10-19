@@ -20,6 +20,8 @@
 		ifdef
 		endif
 		elif
+		define
+		ifndef
 	} $%
 %}
 

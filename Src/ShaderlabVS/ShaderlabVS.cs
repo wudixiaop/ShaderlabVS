@@ -29,16 +29,25 @@ namespace ShaderlabVS
         [Export]
         [FileExtension(Constants.ShaderFileNameExt)]
         [ContentType(Constants.ContentType)]
-        public static FileExtensionToContentTypeDefinition ShaderlabFileTYpe = null;
+        public static FileExtensionToContentTypeDefinition ShaderlabFileType = null;
 
         [Export]
         [FileExtension(Constants.ComputeShaderFileNameExt)]
         [ContentType(Constants.ContentType)]
-        public static FileExtensionToContentTypeDefinition ComputeShaderFileTYpe = null;
+        public static FileExtensionToContentTypeDefinition ComputeShaderFileType = null;
+
+        [Export]
+        [FileExtension(Constants.CGIncludeFileExt)]
+        [ContentType(Constants.ContentType)]
+        public static FileExtensionToContentTypeDefinition CgIncludeFileType = null;
+
+        [Export]
+        [FileExtension(Constants.GLSLIncludeFileExt)]
+        [ContentType(Constants.ContentType)]
+        public static FileExtensionToContentTypeDefinition GLSLIncludeFileType = null;
 
         [Import]
         internal IClassificationTypeRegistryService classificationTypeRegistry = null;
-
 
         public ITagger<T> CreateTagger<T>(ITextBuffer buffer) where T : ITag
         {

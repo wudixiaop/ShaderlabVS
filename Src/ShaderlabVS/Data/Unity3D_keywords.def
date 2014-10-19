@@ -408,3 +408,15 @@
 	%$ Description = {} $%
 	%$ Format = {} $%
 %}
+
+{%
+	%$ Name = {Category} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}
+
+{%
+	%$ Name = {ConstantColor} $%
+	%$ Description = {} $%
+	%$ Format = {} $%
+%}

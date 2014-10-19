@@ -152,6 +152,17 @@
 	%$ Value = {Object to Light space matrix} $%
 %}
 
+{%
+	%$ Name = {_WorldSpaceLightPos0} $%
+	%$ Type = {float4} $%
+	%$ Value = {Light postion in world space} $%	
+%}
+
+{%
+	%$ Name = {_LightColor0} $%
+	%$ Type = {float4} $%
+	%$ Value = {Light color} $%	
+%}
 
 #-------------------------------------------------------------------------------------------------
 #-------------------------------------------Various --------------------------------------------
