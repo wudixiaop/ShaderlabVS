@@ -147,5 +147,18 @@ namespace ShaderlabVS
         }
     }
 
+    [Export(typeof(EditorFormatDefinition))]
+    [Name(Constants.ShaderlabBracesMarker)]
+    [UserVisible(true)]
+    [Order(Before = Priority.Default)]
+    internal sealed class BraceMarkerDefination : MarkerFormatDefinition
+    {
+        public BraceMarkerDefination()
+        {
+            this.DisplayName = Constants.ShaderlabBracesMarker;
+            this.BackgroundColor = Colors.Gray;
+        }
+    }
+
     #endregion //Format definition
 }

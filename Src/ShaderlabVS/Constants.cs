@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ShaderlabVS
+﻿namespace ShaderlabVS
 {
     public class Constants
     {
@@ -16,6 +10,7 @@ namespace ShaderlabVS
         public const string ShaderlabFunction = "Shaderlab-Fucntion";
         public const string ShaderlabComment = "Shaderlab-Comment";
         public const string ShaderlabDataType = "Shaderlab-DataType";
+        public const string ShaderlabBracesMarker = "Shaderlab-BraceMarker";
 
         public const string ShaderFileNameExt = ".shader";
         public const string ComputeShaderFileNameExt = ".compute";

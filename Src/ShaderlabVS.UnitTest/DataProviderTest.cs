@@ -1,6 +1,6 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ShaderlabVS.Data;
+using System;
 
 namespace ShaderlabVS.UnitTest
 {

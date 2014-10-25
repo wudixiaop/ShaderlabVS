@@ -1,13 +1,11 @@
-﻿using System;
+﻿using Microsoft.VisualStudio.Text;
+using Microsoft.VisualStudio.Text.Classification;
+using Microsoft.VisualStudio.Text.Tagging;
+using Microsoft.VisualStudio.Utilities;
+using ShaderlabVS.Lexer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
-using System.Windows.Media;
-using Microsoft.VisualStudio.Text;
-using Microsoft.VisualStudio.Text.Classification;
-using Microsoft.VisualStudio.Utilities;
-using Microsoft.VisualStudio.Text.Tagging;
-using ShaderlabVS.Lexer;
-using System.Diagnostics;
 
 namespace ShaderlabVS
 {
