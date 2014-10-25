@@ -1,6 +1,6 @@
 ﻿namespace ShaderlabVS
 {
-    public enum ShaderlabToken
+    internal enum ShaderlabToken
     {
         TEXT,
         COMMENT,

@@ -24,7 +24,7 @@ namespace ShaderlabVS
 
     #region Parameter
 
-    public class Parameter : IParameter
+    internal class Parameter : IParameter
     {
 
         public Parameter(string documentation, Span locus, string name, ISignature signature)
@@ -66,7 +66,7 @@ namespace ShaderlabVS
         }
     }
 
-    public class Signature : ISignature
+    internal class Signature : ISignature
     {
         private ITrackingSpan applicationToSpan;
         public ITrackingSpan ApplicableToSpan
@@ -221,7 +221,7 @@ namespace ShaderlabVS
 
     #region Help Source and Provider
 
-    public class SignatureHelpSource : ISignatureHelpSource
+    internal class SignatureHelpSource : ISignatureHelpSource
     {
         private ITextBuffer textBuffer;
         private ITextStructureNavigator navigator;
@@ -324,7 +324,7 @@ namespace ShaderlabVS
     [Name("SignatureHelpSourceProvider")]
     [Order(Before = "default")]
     [ContentType(Constants.ContentType)]
-    public class SignatureHelpSourceProvider : ISignatureHelpSourceProvider
+    internal class SignatureHelpSourceProvider : ISignatureHelpSourceProvider
     {
         [Import]
         public ITextStructureNavigatorSelectorService NagivatorService = null;
@@ -339,7 +339,7 @@ namespace ShaderlabVS
 
     #region Command Handler and Provider
 
-    public class SignatureHelpCommand : IOleCommandTarget
+    internal class SignatureHelpCommand : IOleCommandTarget
     {
         IOleCommandTarget nextCommand;
         private ITextView textView;
@@ -404,7 +404,7 @@ namespace ShaderlabVS
     [Name("SignatureHelpCommandProvider")]
     [TextViewRole(PredefinedTextViewRoles.Editable)]
     [ContentType(Constants.ContentType)]
-    public class SignatureHelpCommandProvider : IVsTextViewCreationListener
+    internal class SignatureHelpCommandProvider : IVsTextViewCreationListener
     {
         [Import]
         internal IVsEditorAdaptersFactoryService AdapterServides = null;

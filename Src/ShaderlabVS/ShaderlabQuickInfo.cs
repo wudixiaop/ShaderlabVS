@@ -11,7 +11,7 @@ using System.ComponentModel.Composition;
 namespace ShaderlabVS
 {
     #region Shaderlab Quickinfo Source
-    public class ShaderlabQuickInfoSource : IQuickInfoSource
+    internal class ShaderlabQuickInfoSource : IQuickInfoSource
     {
         private ShaderlabQuickInfoSourceProvider provider;
         private ITextBuffer textBuffer;
@@ -157,7 +157,7 @@ namespace ShaderlabVS
     [Name("ShaderlabQuickInfoSourceProvider")]
     [Order(Before = "Default Quick Info Presenter")]
     [ContentType(Constants.ContentType)]
-    public class ShaderlabQuickInfoSourceProvider : IQuickInfoSourceProvider
+    internal class ShaderlabQuickInfoSourceProvider : IQuickInfoSourceProvider
     {
         [Import]
         public ITextStructureNavigatorSelectorService NavigatorService = null;

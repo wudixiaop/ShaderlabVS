@@ -77,6 +77,7 @@
     <Compile Include="ShaderlabBracesMatching.cs" />
     <Compile Include="ShaderlabCodeCompletion.cs" />
     <Compile Include="ShaderlabQuickInfo.cs" />
+    <Compile Include="ShaderlabShortcuts.cs" />
     <Compile Include="ShaderlabSignatureHelp.cs" />
     <Compile Include="ShaderlabToken.cs" />
     <Compile Include="ShaderlabVSFormat.cs" />
