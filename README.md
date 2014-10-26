@@ -3,16 +3,9 @@ ShaderlabVS
 
 ShaderlabVS is a Visual Studio Plugin for Unity3D shader programming.  
 
-
-####Features:
-* Syntax Hightlighting(support .shader, .compute, .cginc and .glslinc files) 
-* Quickinfo
-* Code Completion
-* Signature Help
-
 ####Screenshot Preview
 
-* Syntax Hightlighting 
+* Syntax Hightlighting and outlining
 	![](./img/Highlighting.PNG)
 * Quickinfo
 	![](./img/QuickInfo.PNG)
@@ -20,6 +13,18 @@ ShaderlabVS is a Visual Studio Plugin for Unity3D shader programming.
 	![](./img/CodeCompletion.PNG)
 * Signature help for CG and Unity3d built in functions
 	![](./img/SignatureHelp.PNG)
+
+####Features Overiew:
+* Outlining
+* Quickinfo
+* Code Completion
+* Comment/UnComment shorcuts
+    * Press "__Ctrl + E, C__" to comment
+    * Press "__Ctrl + E, U__" to uncomment
+* Signature help for CG and Unity3d built in functions
+* Syntax Hightlighting
+    * support .shader, .compute, .cginc and .glslinc files 
+    * Keywords are case insensitive
 
 
 ####How to build and debug:
@@ -34,7 +39,9 @@ ShaderlabVS is a Visual Studio Plugin for Unity3D shader programming.
 ####Support Visual Studio Version:
 * Visual Studio 2012
 * Visual Studio 2013
+* The other version are not tested, not sure if there are also work or not.
 
-
+####License
+MIT
 
 

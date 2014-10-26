@@ -95,6 +95,9 @@
     <None Include="TestFiles\101.shader" />
     <None Include="TestFiles\102.shader" />
     <None Include="TestFiles\C01.compute" />
+    <None Include="TestFiles\Lighting.cginc" />
+    <None Include="TestFiles\UnityCG.cginc" />
+    <None Include="TestFiles\UnityCG.glslinc" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Keywords.png">
