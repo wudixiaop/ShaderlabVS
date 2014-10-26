@@ -5,7 +5,7 @@ ShaderlabVS is a Visual Studio Plugin for Unity3D shader programming.
 
 ####Screenshot Preview
 
-* **Syntax Hightlighting and outlining**
+* **Syntax Hightlighting and outlining**  
 	![](./img/Highlighting.PNG)
 * **Quickinfo**
 	![](./img/QuickInfo.PNG)
