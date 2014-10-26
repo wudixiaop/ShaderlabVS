@@ -41,7 +41,7 @@ namespace ShaderlabVS
             private set;
         }
 
-        public Microsoft.VisualStudio.Text.Span Locus
+        public Span Locus
         {
             get;
             private set;
@@ -53,7 +53,7 @@ namespace ShaderlabVS
             private set;
         }
 
-        public Microsoft.VisualStudio.Text.Span PrettyPrintedLocus
+        public Span PrettyPrintedLocus
         {
             get;
             private set;

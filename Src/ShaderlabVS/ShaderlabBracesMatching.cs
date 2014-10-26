@@ -70,6 +70,14 @@ namespace ShaderlabVS
                 yield break;
             }
             
+           
+            // if in commandline, we do nothing
+            //
+            if (Utilities.IsInCommentLine(currentCharSnapPoint.Value))
+            {
+                yield break;
+            }
+
             // For open char, the matched state trigger when the caret at the right side of the brace char.
             // For closed char, the matched state trigger when the caret at right side of the brace char.
             // 
@@ -118,7 +126,7 @@ namespace ShaderlabVS
 
             int matchIndex = 1;
 
-            while (currentCheckPos >= 0 && currentCheckPos.Position <= currentCheckPos.Snapshot.Length)
+            while (currentCheckPos > 0 && currentCheckPos.Position <= currentCheckPos.Snapshot.Length - 1)
             {
                 currentCheckPos += step;
 
@@ -131,24 +139,24 @@ namespace ShaderlabVS
 
                 if (IsMatchingClosedChar)
                 {
-                    if (currentCheckChar == openChar)
+                    if (currentCheckChar == openChar && !Utilities.IsInCommentLine(currentCheckPos))
                     {
                         matchIndex++;
                     }
 
-                    if (currentCheckChar == closedChar)
+                    if (currentCheckChar == closedChar && !Utilities.IsInCommentLine(currentCheckPos))
                     {
                         matchIndex--;
                     }
                 }
                 else
                 {
-                    if (currentCheckChar == closedChar)
+                    if (currentCheckChar == closedChar && !Utilities.IsInCommentLine(currentCheckPos))
                     {
                         matchIndex++;
                     }
 
-                    if (currentCheckChar == openChar)
+                    if (currentCheckChar == openChar && !Utilities.IsInCommentLine(currentCheckPos))
                     {
                         matchIndex--;
                     }

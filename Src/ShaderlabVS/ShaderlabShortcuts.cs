@@ -176,7 +176,7 @@ namespace ShaderlabVS
                         for (int i = startLineNumber; i <= endLineNumber; i++)
                         {
                             string lineText = start.Value.Snapshot.GetLineFromLineNumber(i).GetText();
-                            int firstOfNonWhiteIndex = IndexOfNonWhitespaceCharacter(lineText);
+                            int firstOfNonWhiteIndex = Utilities.IndexOfNonWhitespaceCharacter(lineText);
                             if (firstOfNonWhiteIndex >= 0 && firstOfNonWhiteIndex < min)
                             {
                                 min = firstOfNonWhiteIndex;
@@ -250,18 +250,6 @@ namespace ShaderlabVS
         private static bool IsShaderlabContent(ITextSnapshot snap)
         {
             return snap.ContentType.IsOfType(Constants.ContentType);
-        }
-
-        private static int IndexOfNonWhitespaceCharacter(string text)
-        {
-            for (int i = 0; i < text.Length; i++)
-            {
-                if (!Char.IsWhiteSpace(text[i]))
-                {
-                    return i;
-                }
-            }
-            return -1;
         }
     }
 

@@ -238,7 +238,10 @@ namespace ShaderlabVS
                 if (completionSession == null || completionSession.IsDismissed)
                 {
                     TriggerCompletion();
-                    completionSession.Filter();
+                    if (completionSession != null)
+                    {
+                        completionSession.Filter();
+                    }
                 }
                 else
                 {
