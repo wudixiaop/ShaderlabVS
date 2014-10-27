@@ -149,6 +149,10 @@
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="gplex.exe" />
+    <Content Include="License.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ShaderlabVS.Data\ShaderlabVS.Data.csproj">
