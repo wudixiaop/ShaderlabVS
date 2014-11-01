@@ -33,7 +33,7 @@ float1				(""+""|""-"")?{digit}*"".""{digit}+{floatsuffix}?
 float2				(""+""|""-"")?{digit}+"".""{digit}+{floatsuffix}?
 numbers				((""+""|""-"")?{digit}+|{float1}|{float2})
 
-symbol				(""+""|""-""|""*""|""/""|""%""|""|""|""<""|"">""|""=""|""!""|"";""|"",""|""=""|""&""|"";""|""{""|""}""|"",""|""(""|"")""|""[""|""]"")
+symbol				(""+""|""-""|""*""|""/""|""%""|""|""|""<""|"">""|""=""|""!""|"";""|"",""|""=""|""&""|"";""|""{""|""}""|"",""|""(""|"")""|""[""|""]""|""\*"")
 
 words				[^\*\n]*
 blank				"" ""
@@ -75,7 +75,7 @@ UNITYBuiltinValues          {$UNITYBuiltinValues$}
 ({white_space}|{symbol}){HLSLCGNonBlockKeyWords}({white_space}|{symbol})				{return (int)ShaderlabToken.HLSLCGKEYWORD;}
 :({blank})*{HLSLCGSpecialKeyWords}({white_space}|{symbol})								{return (int)ShaderlabToken.HLSLCGKEYWORDSPECIAL;}
 ({white_space}|{symbol}){UNITYBuiltinKeywords}{blank}*({white_space}|{symbol})		    {return (int)ShaderlabToken.UNITYKEYWORD;}
-({white_space}|{symbol})#{white_space}*({UNITYBuiltinKeywords}|{HLSLCGBlockKeyWords})({blank}+{words})*{white_space}	    {return (int)ShaderlabToken.UNITYKEYWORD_PARA;}
+({white_space}|{symbol})#{white_space}*({UNITYBuiltinKeywords}|{HLSLCGBlockKeyWords})({blank}+{words}|{symbol}+)*{white_space}	    {return (int)ShaderlabToken.UNITYKEYWORD_PARA;}
 ({white_space}|{symbol}){UNITYBuiltinValues}({white_space}|{symbol})					{return (int)ShaderlabToken.UNITYVALUES;}
 
 /**********Date Type**********/

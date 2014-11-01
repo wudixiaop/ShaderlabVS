@@ -170,6 +170,18 @@
 	%$ Value = {Ambient color provided by Unity} $%	
 %}
 
+{%
+	%$ Name = {_LightMatrix0} $%
+	%$ Type = {float4x4} $%
+	%$ Value = {World space to light space transform matrix. Defined in AutoLight.cginc} $%	
+%}
+
+{%
+	%$ Name = {_LightTexture0} $%
+	%$ Type = {} $%
+	%$ Value = {Cookie texture attched to light. Defined in AutoLight.cginc} $%	
+%}
+
 #-------------------------------------------------------------------------------------------------
 #-------------------------------------------Various --------------------------------------------
 #------------------------------------------------------------------------------------------------

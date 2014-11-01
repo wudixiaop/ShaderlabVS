@@ -21,6 +21,7 @@
 		endif
 		elif
 		define
+		defined
 		ifndef
 	} $%
 %}

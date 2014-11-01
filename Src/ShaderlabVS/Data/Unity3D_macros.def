@@ -284,3 +284,40 @@
 	%$ Synopsis = { TRANSFORM_TEXT(uv, texture)} $%
 	%$ Description = {Vertex program uses the TRANSFORM_TEX macro from UnityCG.cginc to make sure texture scale&offset is applied correctly.} $%
 %}
+
+{%
+	%$ Name = { DIRECTIONAL } $%
+	%$ Synopsis = {} $%
+	%$ Description = {} $%
+%}
+
+{%
+	%$ Name = { DIRECTIONAL_COOKIE } $%
+	%$ Synopsis = {} $%
+	%$ Description = {} $%
+%}
+
+
+{%
+	%$ Name = { POINT } $%
+	%$ Synopsis = {} $%
+	%$ Description = {} $%
+%}
+
+{%
+	%$ Name = { POINT_NOATT } $%
+	%$ Synopsis = {} $%
+	%$ Description = {} $%
+%}
+
+{%
+	%$ Name = { POINT_COOKIE } $%
+	%$ Synopsis = {} $%
+	%$ Description = {} $%
+%}
+
+{%
+	%$ Name = { SPOT } $%
+	%$ Synopsis = {} $%
+	%$ Description = {} $%
+%}
