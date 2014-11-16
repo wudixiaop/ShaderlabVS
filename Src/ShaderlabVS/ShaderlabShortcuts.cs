@@ -26,7 +26,7 @@ namespace ShaderlabVS
 
         public int Exec(ref Guid pguidCmdGroup, uint nCmdID, uint nCmdexecopt, IntPtr pvaIn, IntPtr pvaOut)
         {
-            if (pguidCmdGroup == VSConstants.VSStd2K)
+            if (pguidCmdGroup == Constants.VSStd2KcmdGuid)
             {
                 switch ((VSConstants.VSStd2KCmdID)nCmdID)
                 {
@@ -49,6 +49,18 @@ namespace ShaderlabVS
                         break;
                 }
             }
+            else if (pguidCmdGroup == Constants.VS97CmdGuid)
+            {
+                switch ((VSConstants.VSStd97CmdID)nCmdID)
+                {
+                    case VSConstants.VSStd97CmdID.F1Help:
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            
 
             return nextTarget.Exec(ref pguidCmdGroup, nCmdID, nCmdexecopt, pvaIn, pvaOut);
         }
@@ -69,8 +81,23 @@ namespace ShaderlabVS
                         case VSConstants.VSStd2KCmdID.COMMENTBLOCK:
                         case VSConstants.VSStd2KCmdID.UNCOMMENT_BLOCK:
                         case VSConstants.VSStd2KCmdID.UNCOMMENTBLOCK:
+                        case VSConstants.VSStd2KCmdID.HELP:
                             prgCmds[i].cmdf = (uint)(OLECMDF.OLECMDF_ENABLED | OLECMDF.OLECMDF_SUPPORTED);
                             return VSConstants.S_OK;
+                    }
+                }
+            }
+            else if (pguidCmdGroup == Constants.VS97CmdGuid)
+            {
+                for (int i = 0; i < cCmds; i++)
+                {
+                    switch ((VSConstants.VSStd97CmdID)prgCmds[i].cmdID)
+                    {
+                        case VSConstants.VSStd97CmdID.F1Help:
+                            prgCmds[i].cmdf = (uint)(OLECMDF.OLECMDF_ENABLED | OLECMDF.OLECMDF_SUPPORTED);
+                            return VSConstants.S_OK;
+                        default:
+                            break;
                     }
                 }
             }

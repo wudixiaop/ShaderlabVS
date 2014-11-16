@@ -24,6 +24,7 @@ namespace ShaderlabVS
         public const string BaseDefination = "code";
 
         public static readonly Guid ShaderlabGuid = new Guid("c702cfb7-573c-45f4-9469-115fcb519ad2");
+        public static readonly Guid VS97CmdGuid = typeof(VSConstants.VSStd97CmdID).GUID;
         public static readonly Guid VSStd2KcmdGuid = typeof(VSConstants.VSStd2KCmdID).GUID;
     }
 }

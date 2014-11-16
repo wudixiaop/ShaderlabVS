@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShaderlabVS", "ShaderlabVS\ShaderlabVS.csproj", "{096AB63C-D3A8-4CA9-89C8-84E54656188B}"
 	ProjectSection(ProjectDependencies) = postProject
 		{FABB0EBB-546D-4E42-856B-6A50EF766E9B} = {FABB0EBB-546D-4E42-856B-6A50EF766E9B}
