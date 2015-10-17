@@ -14,6 +14,7 @@ using System.ComponentModel.Composition;
 using System.IO;
 using System.Reflection;
 using System.Runtime.InteropServices;
+using System.Text.RegularExpressions;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
@@ -22,7 +23,7 @@ namespace ShaderlabVS
     #region Shaderlab Completion Source
     public class ShaderlabCompletionSource : ICompletionSource
     {
-
+        private static HashSet<string> WordsInDocuments = new HashSet<string>();
         private ShaderlabCompletionSourceProvider sourceProvider;
         private ITextBuffer textBuffer;
 
@@ -30,6 +31,34 @@ namespace ShaderlabVS
         {
             this.sourceProvider = completonSourceProvider;
             this.textBuffer = textBuffer;
+        }
+
+        public static void SetWordsInDocuments(string text)
+        {
+            StringReader reader = new StringReader(text);
+
+            string line = reader.ReadLine();
+
+            while (line != null)
+            {
+                if (Utilities.IsCommentLine(line))
+                {
+                    line = reader.ReadLine();
+                    continue;
+                }
+
+                string[] words = line.Split(
+                    new char[] { '{', '}', ' ', '\t', '(', ')', '[', ']', '+', '-', '*', '/', '%', '^', '>', '<', ':',
+                                '.', ';', '\"', '\'', '?', '\\', '&', '|', '`', '$', '#', ','},
+                    StringSplitOptions.RemoveEmptyEntries);
+
+                foreach (var word in words)
+                {
+                    WordsInDocuments.Add(word);
+                }
+
+                line = reader.ReadLine();
+            }
         }
 
         private ITrackingSpan FindTokenSpanAtPosition(ITrackingPoint point, ICompletionSession completionSession)
@@ -44,68 +73,73 @@ namespace ShaderlabVS
         public void AugmentCompletionSession(ICompletionSession session, IList<CompletionSet> completionSets)
         {
             List<Completion> completionList = new List<Completion>();
+            ImageSource functionsImage = GetImageFromAssetByName("Method.png");
+            ImageSource datatypeImage = GetImageFromAssetByName("Structure.png");
+            ImageSource keywordsImage = GetImageFromAssetByName("Keywords.png");
+            ImageSource valuesImage = GetImageFromAssetByName("Values.png");
+
+            HashSet<string> keywords = new HashSet<string>();
 
             // Add functions into auto completion list
             //
-            ImageSource functionsImage = GetImageFromAssetByName("Method.png");
             ShaderlabDataManager.Instance.HLSLCGFunctions.ForEach(f =>
             {
                 completionList.Add(new Completion(f.Name, f.Name, f.Description, functionsImage, null));
+                keywords.Add(f.Name);
             });
 
             ShaderlabDataManager.Instance.UnityBuiltinFunctions.ForEach(f =>
-                {
-                    completionList.Add(new Completion(f.Name, f.Name, f.Description, functionsImage, null));
-                });
-
-            
+            {
+                completionList.Add(new Completion(f.Name, f.Name, f.Description, functionsImage, null));
+                keywords.Add(f.Name);
+            });
 
             // Datatypes
             //
-            ImageSource datatypeImage = GetImageFromAssetByName("Structure.png");
-
             ShaderlabDataManager.Instance.HLSLCGDatatypes.ForEach(d =>
-                {
-                    completionList.Add(new Completion(d, d, "", datatypeImage, null));
-                });
+            {
+                completionList.Add(new Completion(d, d, "", datatypeImage, null));
+                keywords.Add(d);
+            });
 
             ShaderlabDataManager.Instance.UnityBuiltinDatatypes.ForEach(d =>
-                {
-                    completionList.Add(new Completion(d.Name, d.Name, d.Description, datatypeImage, null));
-                });
+            {
+                completionList.Add(new Completion(d.Name, d.Name, d.Description, datatypeImage, null));
+                keywords.Add(d.Name);
+            });
 
             // Keywords
             //
-            ImageSource keywordsImage = GetImageFromAssetByName("Keywords.png");
-
             ShaderlabDataManager.Instance.HLSLCGBlockKeywords.ForEach(k =>
-                {
-                    completionList.Add(new Completion(k, k, "", keywordsImage, null));
-                });
+            {
+                completionList.Add(new Completion(k, k, "", keywordsImage, null));
+                keywords.Add(k);
+            });
 
             ShaderlabDataManager.Instance.HLSLCGNonblockKeywords.ForEach(k =>
-               {
-                   completionList.Add(new Completion(k, k, "", keywordsImage, null));
-               });
+            {
+                completionList.Add(new Completion(k, k, "", keywordsImage, null));
+                keywords.Add(k);
+            });
 
             ShaderlabDataManager.Instance.HLSLCGSpecialKeywords.ForEach(k =>
             {
                 completionList.Add(new Completion(k, k, "", keywordsImage, null));
+                keywords.Add(k);
             });
 
             ShaderlabDataManager.Instance.UnityKeywords.ForEach(k =>
-                {
-                    completionList.Add(new Completion(k.Name, k.Name, k.Description, keywordsImage, null));
-                });
+            {
+                completionList.Add(new Completion(k.Name, k.Name, k.Description, keywordsImage, null));
+                keywords.Add(k.Name);
+            });
 
             // values/enums
-            ImageSource valuesImage = GetImageFromAssetByName("Values.png");
-
             ShaderlabDataManager.Instance.UnityBuiltinValues.ForEach(v =>
-                {
-                    completionList.Add(new Completion(v.Name, v.Name, v.VauleDescription, valuesImage, null));
-                });
-
+            {
+                completionList.Add(new Completion(v.Name, v.Name, v.VauleDescription, valuesImage, null));
+                keywords.Add(v.Name);
+            });
 
             // Macros
             // 
@@ -120,7 +154,18 @@ namespace ShaderlabVS
                 {
                     completionList.Add(new Completion(m.Name, m.Name, description, valuesImage, null));
                 }
+                keywords.Add(m.Name);
             });
+
+            // Add words in current file
+            //
+            foreach (var word in WordsInDocuments)
+            {
+                if (!keywords.Contains(word))
+                {
+                    completionList.Add(new Completion(word, word, string.Empty, valuesImage, null));
+                }
+            }
 
             completionSets.Add(new CompletionSet("Token", "Token", FindTokenSpanAtPosition(session.GetTriggerPoint(this.textBuffer), session), completionList, null));
         }

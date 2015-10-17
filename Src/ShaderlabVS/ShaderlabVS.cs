@@ -85,11 +85,13 @@ namespace ShaderlabVS
 
         public IEnumerable<ITagSpan<ClassificationTag>> GetTags(NormalizedSnapshotSpanCollection spans)
         {
+            ShaderlabCompletionSource.SetWordsInDocuments(spans[0].Snapshot.GetText());
+            
             string text = " " + spans[0].Snapshot.GetText().ToLower();
             scanner.SetSource(text, 0);
             int token;
             IClassificationType cf;
-
+                
             do
             {
                 token = scanner.NextToken();
