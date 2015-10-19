@@ -39,6 +39,7 @@ ShaderlabVS is a Visual Studio Plugin for Unity Shaderlab programming. Latest re
 ####Support Visual Studio Version:
 * Visual Studio 2012
 * Visual Studio 2013
+* Visual Studio 2015 (Need execute vs2015_register.cmd after the plugin install)
 * The other version are not tested, not sure if there are also work or not.
 
 ####License
