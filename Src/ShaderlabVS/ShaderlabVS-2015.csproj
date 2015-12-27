@@ -142,7 +142,6 @@
     <None Include="TestFiles\Lighting.cginc" />
     <None Include="TestFiles\UnityCG.cginc" />
     <None Include="TestFiles\UnityCG.glslinc" />
-    <None Include="vs2015-register.cmd" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Keywords.png">
