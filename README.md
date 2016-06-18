@@ -1,7 +1,7 @@
 ShaderlabVS
 ===========
 
-ShaderlabVS is a Visual Studio Plugin for Unity Shaderlab programming. Latest releae build can be found at [here](http://wudixiaop.github.io/shaderlabvs-release-page.html)
+ShaderlabVS is a Visual Studio Plugin for Unity Shaderlab programming. Latest releae build can be found at [here](http://blog.shuiguzi.com/2014/10/28/Release/)
 
 ####Screenshot Preview
 
