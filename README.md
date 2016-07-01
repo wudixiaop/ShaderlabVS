@@ -1,33 +1,34 @@
 ShaderlabVS
 ===========
 
-ShaderlabVS is a Visual Studio Plugin for Unity Shaderlab programming. Latest releae build can be found at [here](http://blog.shuiguzi.com/2014/10/28/Release/)
+ShaderlabVS is a Visual Studio Plugin for Unity Shaderlab programming. It supports support .shader, .compute, .cginc and .glslinc files.  Latest releae build can be found at [here](http://blog.shuiguzi.com/2014/10/28/Release/).
 
-####Screenshot Preview
+[![Open Source Love](https://badges.frapsoft.com/os/mit/mit.svg?v=102)](https://github.com/wudixiaop/ShaderlabVS/) [![GitHub version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=gh&type=6&v=0.6.1&x2=0)](http://blog.shuiguzi.com/2014/10/28/Release/)
 
-* **Syntax Hightlighting and outlining**  
-	![](./img/Highlighting.PNG)
-* **Quickinfo**  
-	![](./img/QuickInfo.PNG)
-* **Code Completion**  
-	![](./img/CodeCompletion.PNG)
-* **Signature help for CG and Unity built in functions**  
-	![](./img/SignatureHelp.PNG)
+###Features
 
-####Features Overiew:
-* Outlining
-* Quickinfo
-* Code Completion
-* Comment/UnComment shorcuts
-    * Press "__Ctrl + E, C__" to comment
-    * Press "__Ctrl + E, U__" to uncomment
-* Signature help for CG and Unity3d built in functions
-* Syntax Hightlighting
-    * support .shader, .compute, .cginc and .glslinc files 
-    * Keywords are case insensitive
+######1. Syntax Hightlighting and outlining
 
+![Highlighting](./img/Highlighting.PNG)
+######2. Quickinfo
 
-####How to build and debug:
+![QuickInfo](./img/QuickInfo.PNG)
+
+######3. Code Completion
+
+![CodeCompletion](./img/CodeCompletion.PNG)
+
+######4. Signature help for CG and Unity built in functions
+
+![SignatureHelp](./img/SignatureHelp.PNG)
+
+###Development
+#####1. Requirements 
+
+* Visual Studio
+* Visual Studio SDK
+
+#####How to debug in Visual Studio
 1. Download and install Visual Studio SDK
 2. Open ShaderlabVS solution
 3. Press *F6* to build solution
@@ -36,13 +37,10 @@ ShaderlabVS is a Visual Studio Plugin for Unity Shaderlab programming. Latest re
     2. set **_Comand line arguments_** to **/rootsuffix Exp**. Below is a screenshot for the settings:
     ![](./img/DebugSettings.PNG)
 
-####Support Visual Studio Version:
+###Support Visual Studio Version:
 * Visual Studio 2012
 * Visual Studio 2013
 * Visual Studio 2015 (Need execute vs2015_register.cmd after the plugin install)
-* The other version are not tested, not sure if there are also work or not.
 
-####License
-MIT
-
+__The other version are not tested, not sure if there are also work or not.__
 
