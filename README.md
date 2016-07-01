@@ -28,7 +28,7 @@ ShaderlabVS is a Visual Studio Plugin for Unity Shaderlab programming. It suppor
 * Visual Studio
 * Visual Studio SDK
 
-#####How to debug in Visual Studio
+#####2. How to debug in Visual Studio
 1. Download and install Visual Studio SDK
 2. Open ShaderlabVS solution
 3. Press *F6* to build solution
@@ -37,7 +37,7 @@ ShaderlabVS is a Visual Studio Plugin for Unity Shaderlab programming. It suppor
     2. set **_Comand line arguments_** to **/rootsuffix Exp**. Below is a screenshot for the settings:
     ![](./img/DebugSettings.PNG)
 
-###Support Visual Studio Version:
+###Support Visual Studio Versions:
 * Visual Studio 2012
 * Visual Studio 2013
 * Visual Studio 2015 (Need execute vs2015_register.cmd after the plugin install)
