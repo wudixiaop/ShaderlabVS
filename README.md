@@ -5,30 +5,34 @@ ShaderlabVS is a Visual Studio Plugin for Unity Shaderlab programming. It suppor
 
 [![Open Source Love](https://badges.frapsoft.com/os/mit/mit.svg?v=102)](https://github.com/wudixiaop/ShaderlabVS/) [![GitHub version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=gh&type=6&v=0.6.1&x2=0)](http://blog.shuiguzi.com/2014/10/28/Release/)
 
-###Features
+### Thanks To
 
-######1. Syntax Hightlighting and outlining
+晨曦
+
+### Features
+
+###### 1. Syntax Hightlighting and outlining
 
 ![Highlighting](./img/Highlighting.PNG)
-######2. Quickinfo
+###### 2. Quickinfo
 
 ![QuickInfo](./img/QuickInfo.PNG)
 
-######3. Code Completion
+###### 3. Code Completion
 
 ![CodeCompletion](./img/CodeCompletion.PNG)
 
-######4. Signature help for CG and Unity built in functions
+###### 4. Signature help for CG and Unity built in functions
 
 ![SignatureHelp](./img/SignatureHelp.PNG)
 
-###Development
-#####1. Requirements 
+### Development
+##### 1. Requirements 
 
 * Visual Studio
 * Visual Studio SDK
 
-#####2. How to debug in Visual Studio
+##### 2. How to debug in Visual Studio
 1. Download and install Visual Studio SDK
 2. Open ShaderlabVS solution
 3. Press *F6* to build solution
@@ -37,10 +41,9 @@ ShaderlabVS is a Visual Studio Plugin for Unity Shaderlab programming. It suppor
     2. set **_Comand line arguments_** to **/rootsuffix Exp**. Below is a screenshot for the settings:
     ![](./img/DebugSettings.PNG)
 
-###Support Visual Studio Versions:
+### Support Visual Studio Versions:
 * Visual Studio 2012
 * Visual Studio 2013
 * Visual Studio 2015 (Need execute vs2015_register.cmd after the plugin install)
 
 __The other version are not tested, not sure if there are also work or not.__
-
