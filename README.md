@@ -1,7 +1,7 @@
 ShaderlabVS
 ===========
 
-ShaderlabVS is a Visual Studio Plugin for Unity Shaderlab programming. It supports support .shader, .compute, .cginc and .glslinc files.  Latest releae build can be found at [here](http://blog.shuiguzi.com/2014/10/28/Release/).
+ShaderlabVS is a Visual Studio Plugin for Unity Shaderlab programming. It supports support .shader, .compute, .cginc and .glslinc files.  Latest releae build can be found at [here](http://blog.shuiguzi.com/2014/10/28/Release/) or the Release page.
 
 [![Open Source Love](https://badges.frapsoft.com/os/mit/mit.svg?v=102)](https://github.com/wudixiaop/ShaderlabVS/) [![GitHub version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=gh&type=6&v=0.7-beta&x2=0)](http://blog.shuiguzi.com/2014/10/28/Release/)
 
@@ -42,8 +42,7 @@ ShaderlabVS is a Visual Studio Plugin for Unity Shaderlab programming. It suppor
     ![](./img/DebugSettings.PNG)
 
 ### Support Visual Studio Versions:
-* Visual Studio 2012
 * Visual Studio 2013
-* Visual Studio 2015 (Need execute vs2015_register.cmd after the plugin install)
+* Visual Studio 2015
 
 __The other version are not tested, not sure if there are also work or not.__
