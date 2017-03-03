@@ -59,9 +59,9 @@
       <Project>{6f1e6f30-1728-43ad-96c6-494cd780b6e6}</Project>
       <Name>ShaderlabVS.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ShaderlabVS\ShaderlabVS.csproj">
+    <ProjectReference Include="..\ShaderlabVS\ShaderlabVS-2015.csproj">
       <Project>{096ab63c-d3a8-4ca9-89c8-84e54656188b}</Project>
-      <Name>ShaderlabVS</Name>
+      <Name>ShaderlabVS-2015</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

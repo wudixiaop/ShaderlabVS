@@ -18,6 +18,14 @@
 "HLSLFile"=dword:00000001
 @="{c702cfb7-573c-45f4-9469-115fcb519ad2}"
 
+[$RootKey$\Languages\File Extensions\.hlsl]
+"HLSLFile"=dword:00000001
+@="{c702cfb7-573c-45f4-9469-115fcb519ad2}"
+
+[$RootKey$\Languages\File Extensions\.cg]
+"HLSLFile"=dword:00000001
+@="{c702cfb7-573c-45f4-9469-115fcb519ad2}"
+
 [$RootKey$\Languages\File Extensions\.cginc]
 "HLSLFile"=dword:00000001
 @="{c702cfb7-573c-45f4-9469-115fcb519ad2}"

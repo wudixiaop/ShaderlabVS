@@ -20,6 +20,8 @@ namespace ShaderlabVS
         public const string ComputeShaderFileNameExt = ".compute";
         public const string CGIncludeFileExt = ".cginc";
         public const string GLSLIncludeFileExt = ".glslinc";
+        public const string CGFile = ".cg";
+        public const string HLSLFile = ".hlsl";
         public const string ContentType = "ShaderlabUnity3D";
         public const string BaseDefination = "code";
 
