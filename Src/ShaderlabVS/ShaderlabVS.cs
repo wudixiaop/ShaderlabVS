@@ -101,6 +101,7 @@ namespace ShaderlabVS
 
         public IEnumerable<ITagSpan<ClassificationTag>> GetTags(NormalizedSnapshotSpanCollection spans)
         {
+            ShaderlabCompletionSource.ClearWordsInDocuments();
             ShaderlabCompletionSource.SetWordsInDocuments(spans[0].Snapshot.GetText());
             
             string text = " " + spans[0].Snapshot.GetText().ToLower();
