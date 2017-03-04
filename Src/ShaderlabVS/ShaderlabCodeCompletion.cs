@@ -28,6 +28,21 @@ namespace ShaderlabVS
         private ITextBuffer textBuffer;
         private ITextDocument textDocument;
 
+        static ImageSource functionsImage;
+        static ImageSource datatypeImage;
+        static ImageSource keywordsImage;
+        static ImageSource valuesImage;
+
+        static ShaderlabCompletionSource()
+        {
+            functionsImage = GetImageFromAssetByName("Method.png");
+            datatypeImage = GetImageFromAssetByName("Structure.png");
+            keywordsImage = GetImageFromAssetByName("Keywords.png");
+            valuesImage = GetImageFromAssetByName("Values.png");
+
+        }
+
+
         public ShaderlabCompletionSource(ShaderlabCompletionSourceProvider completonSourceProvider, ITextBuffer textBuffer, ITextDocument document)
         {
             this.sourceProvider = completonSourceProvider;
@@ -80,10 +95,6 @@ namespace ShaderlabVS
         public void AugmentCompletionSession(ICompletionSession session, IList<CompletionSet> completionSets)
         {
             List<Completion> completionList = new List<Completion>();
-            ImageSource functionsImage = GetImageFromAssetByName("Method.png");
-            ImageSource datatypeImage = GetImageFromAssetByName("Structure.png");
-            ImageSource keywordsImage = GetImageFromAssetByName("Keywords.png");
-            ImageSource valuesImage = GetImageFromAssetByName("Values.png");
 
             HashSet<string> keywords = new HashSet<string>();
 
@@ -96,22 +107,19 @@ namespace ShaderlabVS
 
             // Datatypes
             //
-            ShaderlabDataManager.Instance.HLSLCGDatatypes.ForEach(d =>
-            {
+            ShaderlabDataManager.Instance.HLSLCGDatatypes.ForEach(d => {
                 completionList.Add(new Completion(d, d, "", datatypeImage, null));
                 keywords.Add(d);
             });
 
             // Keywords
             //
-            ShaderlabDataManager.Instance.HLSLCGBlockKeywords.ForEach(k =>
-            {
+            ShaderlabDataManager.Instance.HLSLCGBlockKeywords.ForEach(k => {
                 completionList.Add(new Completion(k, k, "", keywordsImage, null));
                 keywords.Add(k);
             });
 
-            ShaderlabDataManager.Instance.HLSLCGNonblockKeywords.ForEach(k =>
-            {
+            ShaderlabDataManager.Instance.HLSLCGNonblockKeywords.ForEach(k => {
                 completionList.Add(new Completion(k, k, "", keywordsImage, null));
                 keywords.Add(k);
             });
@@ -126,8 +134,7 @@ namespace ShaderlabVS
             {
                 // Unity data types
                 //
-                ShaderlabDataManager.Instance.UnityBuiltinDatatypes.ForEach(d =>
-                {
+                ShaderlabDataManager.Instance.UnityBuiltinDatatypes.ForEach(d => {
                     completionList.Add(new Completion(d.Name, d.Name, d.Description, datatypeImage, null));
                     keywords.Add(d.Name);
                 });
@@ -180,7 +187,7 @@ namespace ShaderlabVS
             completionSets.Add(new CompletionSet("Token", "Token", FindTokenSpanAtPosition(session.GetTriggerPoint(this.textBuffer), session), completionList, null));
         }
 
-        private ImageSource GetImageFromAssetByName(string imageFileName)
+        private static ImageSource GetImageFromAssetByName(string imageFileName)
         {
             string currentAssemblyDir = (new FileInfo(Assembly.GetExecutingAssembly().CodeBase.Substring(8))).DirectoryName;
             return new BitmapImage(new Uri(Path.Combine(currentAssemblyDir, "Assets", imageFileName), UriKind.Absolute));
