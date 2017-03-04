@@ -214,8 +214,8 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
-Src/Shaderlab.lst
+*.lst
+*.lex
 Src/Shaderlab.cs
 Src/ShaderlabVS/Shaderlab.cs
-Src/ShaderlabVS/Shaderlab.lst
-Src/ShaderlabVS/Shaderlab.lex
+src/ShaderlabVS.LexData/Shaderlab.cs
