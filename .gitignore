@@ -220,3 +220,5 @@ Src/Shaderlab.cs
 Src/ShaderlabVS/Shaderlab.cs
 src/ShaderlabVS.LexData/Shaderlab.cs
 src.ShaderlabVS/ShaderlabVS.LexTools.exe
+/Src/ShaderlabVS/lex.data
+/Src/ShaderlabVS/ShaderlabVS.LexTools.exe

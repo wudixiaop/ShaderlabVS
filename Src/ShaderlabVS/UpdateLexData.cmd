@@ -7,15 +7,16 @@ SET LEX=3.lex
 SET LEX_LIST=3.lst
 SET DATA_APP=data.exe
 
-SET VS_DEV_BAT="%ProgramFiles(x86)%\Microsoft Visual Studio 14.0\Common7\Tools\VsDevCmd.bat"
+
+SET VS_DEV_BAT="%VS140COMNTOOLS%VsDevCmd.bat"
 
 IF NOT EXIST %VS_DEV_BAT% (
-    SET VS_DEV_BAT="%ProgramFiles(x86)%\Microsoft Visual Studio 12.0\Common7\Tools\VsDevCmd.bat"
+    SET VS_DEV_BAT="%VS120COMNTOOLS%VsDevCmd.bat"
 ) ELSE (
     GOTO :MAIN
 )
 
-IF NOT EXIST %VS_DEV_BA T% (
+IF NOT EXIST %VS_DEV_BAT% (
     ECHO "There are no supported Visual Studio version installed on your machine!!!"
     GOTO :PAUSE
 )
@@ -26,7 +27,7 @@ GOTO :EOF
 
 REM --------------MAIN START---------
 :MAIN
-
+ECHO Found %VS_DEV_BAT%
 CALL :CLEAN
 
 ShaderlabVS.LexTools.exe %LEX%
