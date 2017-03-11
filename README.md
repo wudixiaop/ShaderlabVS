@@ -66,8 +66,8 @@ __The other version are not tested, not sure if there are also work or not.__
 
 晨曦
 
-### Buy me
+### Buy me a coffe
 
 If you like this extension, and want to buy me a coffee. You can via [Paypal](http://paypal.me/rockylai) or scan below QR code to donate via Alipay.
 
-![](http://blog.shuiguzi.com/images/pay/alipay.png)
+<img src='http://blog.shuiguzi.com/images/pay/alipay.png' width='360' height='360'/>
