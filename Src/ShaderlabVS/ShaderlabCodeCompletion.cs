@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.Editor;
 using Microsoft.VisualStudio.Language.Intellisense;
 using Microsoft.VisualStudio.OLE.Interop;
 using Microsoft.VisualStudio.Text;
+using Microsoft.VisualStudio.Text.BraceCompletion;
 using Microsoft.VisualStudio.Text.Editor;
 using Microsoft.VisualStudio.Text.Operations;
 using Microsoft.VisualStudio.TextManager.Interop;
@@ -100,26 +101,30 @@ namespace ShaderlabVS
 
             // Add functions into auto completion list
             //
-            ShaderlabDataManager.Instance.HLSLCGFunctions.ForEach(f => {
+            ShaderlabDataManager.Instance.HLSLCGFunctions.ForEach(f =>
+            {
                 completionList.Add(new Completion(f.Name, f.Name, f.Description, functionsImage, null));
                 keywords.Add(f.Name);
             });
 
             // Datatypes
             //
-            ShaderlabDataManager.Instance.HLSLCGDatatypes.ForEach(d => {
+            ShaderlabDataManager.Instance.HLSLCGDatatypes.ForEach(d =>
+            {
                 completionList.Add(new Completion(d, d, "", datatypeImage, null));
                 keywords.Add(d);
             });
 
             // Keywords
             //
-            ShaderlabDataManager.Instance.HLSLCGBlockKeywords.ForEach(k => {
+            ShaderlabDataManager.Instance.HLSLCGBlockKeywords.ForEach(k =>
+            {
                 completionList.Add(new Completion(k, k, "", keywordsImage, null));
                 keywords.Add(k);
             });
 
-            ShaderlabDataManager.Instance.HLSLCGNonblockKeywords.ForEach(k => {
+            ShaderlabDataManager.Instance.HLSLCGNonblockKeywords.ForEach(k =>
+            {
                 completionList.Add(new Completion(k, k, "", keywordsImage, null));
                 keywords.Add(k);
             });
@@ -134,33 +139,38 @@ namespace ShaderlabVS
             {
                 // Unity data types
                 //
-                ShaderlabDataManager.Instance.UnityBuiltinDatatypes.ForEach(d => {
+                ShaderlabDataManager.Instance.UnityBuiltinDatatypes.ForEach(d =>
+                {
                     completionList.Add(new Completion(d.Name, d.Name, d.Description, datatypeImage, null));
                     keywords.Add(d.Name);
                 });
 
                 // Unity Functions
                 //
-                ShaderlabDataManager.Instance.UnityBuiltinFunctions.ForEach(f => {
+                ShaderlabDataManager.Instance.UnityBuiltinFunctions.ForEach(f =>
+                {
                     completionList.Add(new Completion(f.Name, f.Name, f.Description, functionsImage, null));
                     keywords.Add(f.Name);
                 });
 
 
-                ShaderlabDataManager.Instance.UnityKeywords.ForEach(k => {
+                ShaderlabDataManager.Instance.UnityKeywords.ForEach(k =>
+                {
                     completionList.Add(new Completion(k.Name, k.Name, k.Description, keywordsImage, null));
                     keywords.Add(k.Name);
                 });
 
                 // Unity values/enums
-                ShaderlabDataManager.Instance.UnityBuiltinValues.ForEach(v => {
+                ShaderlabDataManager.Instance.UnityBuiltinValues.ForEach(v =>
+                {
                     completionList.Add(new Completion(v.Name, v.Name, v.VauleDescription, valuesImage, null));
                     keywords.Add(v.Name);
                 });
 
                 // Unity Macros
                 // 
-                ShaderlabDataManager.Instance.UnityBuiltinMacros.ForEach(m => {
+                ShaderlabDataManager.Instance.UnityBuiltinMacros.ForEach(m =>
+                {
                     string description = string.Format("{0}\n{1}", string.Join(";\n", m.Synopsis), m.Description);
                     if (m.Synopsis.Count > 0)
                     {
@@ -379,5 +389,62 @@ namespace ShaderlabVS
         }
     }
 
+    #endregion
+
+    #region BraceCompletion
+
+    [Export(typeof(IBraceCompletionContextProvider))]
+    [ContentType(Constants.ContentType)]
+    [BracePair('(', ')')]
+    [BracePair('[', ']')]
+    [BracePair('{', '}')]
+    [BracePair('"', '"')]
+    [BracePair('\'', '\'')]
+    internal sealed class ShaderlabVSBraceCompletionContextProvider : IBraceCompletionContextProvider
+    {
+        public bool TryCreateContext(ITextView textView, SnapshotPoint openingPoint, char openingBrace, char closingBrace, out IBraceCompletionContext context)
+        {
+            context = null;
+            if (IsValidBraceCompletionContext(openingPoint))
+            {
+                context = new ShaderlabBraceCompletionContext();
+                return true;
+            }
+
+            return false;
+        }
+
+        private bool IsValidBraceCompletionContext(SnapshotPoint openingPoint)
+        {
+            if (openingPoint.Position >= 0)
+            {
+                return true;
+            }
+
+            return false;
+        }
+    }
+
+    [Export(typeof(IBraceCompletionContext))]
+    internal sealed class ShaderlabBraceCompletionContext : IBraceCompletionContext
+    {
+
+        public bool AllowOverType(IBraceCompletionSession session)
+        {
+            return true;
+        }
+
+        public void Finish(IBraceCompletionSession session)
+        {
+        }
+
+        public void OnReturn(IBraceCompletionSession session)
+        {
+        }
+
+        public void Start(IBraceCompletionSession session)
+        {
+        }
+    }
     #endregion
 }

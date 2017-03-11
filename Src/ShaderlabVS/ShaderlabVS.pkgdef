@@ -40,5 +40,8 @@
 
 [$RootKey$\Languages\Language Services]
 
-[$RootKey$\Languages\Language Services\ShaderlabUnity3D]
+[$RootKey$\Languages\Language Services\ShaderlabVS]
 @="{c702cfb7-573c-45f4-9469-115fcb519ad2}"
+
+[$RootKey$\Languages\Language Services\ShaderlabVS]
+"ShowBraceCompletion"=dword:00000001
