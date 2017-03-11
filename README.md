@@ -1,3 +1,5 @@
+[中文版 README](./READE_CN.md)
+
 ShaderlabVS
 ===========
 
@@ -20,6 +22,7 @@ Features
 ### Syntax Hightlighting and outlining
 
 ![Highlighting](./img/Highlighting.PNG)
+
 ### Quickinfo
 
 ![QuickInfo](./img/QuickInfo.PNG)
@@ -31,6 +34,10 @@ Features
 ### Signature help for CG and Unity built in functions
 
 ![SignatureHelp](./img/SignatureHelp.PNG)
+
+### Supports Dark Theme
+
+![dark](./img/dark.png)
 
 Development
 -----
@@ -47,7 +54,8 @@ Development
 4. If you want to debug it in Visual Studio, and encounter problems, please make sure the **_Start exteral program_** and **_Comand line arguments_** in the **Debug** tab of ShaderlabVS project settings have value as follow:
     1. Set **_Start exteral program_** to the path of devenv.exe (the Visual studio main program)
     2. set **_Comand line arguments_** to **/rootsuffix Exp**. Below is a screenshot for the settings:
-    ![](./img/DebugSettings.PNG)
+
+![](./img/DebugSettings.PNG)
 
 ### Support Visual Studio Versions:
 * Visual Studio 2015
@@ -58,3 +66,8 @@ __The other version are not tested, not sure if there are also work or not.__
 
 晨曦
 
+### Buy me
+
+If you like this extension, and want to buy me a coffee. You can via [Paypal](http://paypal.me/rockylai) or scan below QR code to donate via Alipay.
+
+![](http://blog.shuiguzi.com/images/pay/alipay.png)
