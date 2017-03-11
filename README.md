@@ -1,4 +1,4 @@
-[中文版 README](./READE_CN.md)
+[中文版 README](https://github.com/wudixiaop/ShaderlabVS/blob/master/README_CN.md)
 
 ShaderlabVS
 ===========
