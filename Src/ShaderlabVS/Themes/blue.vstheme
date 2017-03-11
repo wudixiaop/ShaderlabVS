@@ -1,0 +1,30 @@
+﻿<Themes>
+  <Theme Name="Light" GUID="{a4d6a176-b948-4b29-8c66-53c97a1ed7d0}">
+    <Category Name="Text Editor" GUID="{75A05685-00A8-4DED-BAE5-E7A50BFA929A}">
+	    <Color Name="Shaderlab-Strings">
+          <Foreground Type="CT_RAW" Source="FF00008B" />
+        </Color>
+	    <Color Name="Shaderlab-HLSLCGKeywords">
+          <Foreground Type="CT_RAW" Source="FFFF0000" />
+        </Color>
+	    <Color Name="Shaderlab-UnityKeywords">
+          <Foreground Type="CT_RAW" Source="FFFF0000" />
+        </Color>
+	    <Color Name="Shaderlab-UnityKeywordsPara">
+          <Foreground Type="CT_RAW" Source="FF8B008B" />
+        </Color>
+	    <Color Name="Shaderlab-Fucntion">
+          <Foreground Type="CT_RAW" Source="FF8B008B" />
+        </Color>
+	    <Color Name="Shaderlab-Comment">
+          <Foreground Type="CT_RAW" Source="FF228B22" />
+        </Color>
+	    <Color Name="Shaderlab-DataType">
+          <Foreground Type="CT_RAW" Source="FFFF0000" />
+        </Color>
+	    <Color Name="Shaderlab-BraceMarker">
+        <Foreground Type="CT_RAW" Source="FF808080" />
+      </Color>
+    </Category>
+  </Theme>
+</Themes>

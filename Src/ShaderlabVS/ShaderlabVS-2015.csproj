@@ -147,9 +147,30 @@
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="TestFiles\104.hlsl" />
+    <Content Include="Themes\ShaderlabVS.theme.v12.0.pkgdef">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Themes\ShaderlabVS.theme.v14.0.pkgdef">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Themes\ShaderlabVS.theme.v15.0.pkgdef">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <Content Include="UpdateLexData.cmd">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <None Include="Themes\blue.vstheme">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Themes\dark.vstheme">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Themes\light.vstheme">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Keywords.png">
