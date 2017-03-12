@@ -9,16 +9,76 @@ namespace ShaderlabVS.LexTools
         private static string lexFormat = @"
 %namespace ShaderlabVS.Lexer
 %option verbose, summary, noparser, nofiles, unicode
+%using System.Runtime.Serialization.Formatters.Binary;
+%using System.Xml.Serialization;
+%using System.Linq;
 
 /**********************************************************************************/
 /********************************User Defined Code*********************************/
 /**********************************************************************************/
 
 %{
-     public int NextToken() { return yylex(); }
-     public int GetPos() { return yypos; }
-     public int GetLength() { return yyleng; }
-	 public void PushbackText(int length) { yyless(length); }
+        public static void GenerateTableData()
+        {
+            List<TableWrapper> dataCopied = new List<TableWrapper>();
+            foreach (var item in NxS)
+            {
+                dataCopied.Add(TableToWrapper(item));
+            }
+
+            XmlSerializer serializer = new XmlSerializer(typeof(List<TableWrapper>));
+            serializer.Serialize(new FileStream(""lex.xml"", FileMode.OpenOrCreate), dataCopied);
+        }
+
+    public static void LoadTableDataFromLex()
+    {
+        string currentAssemblyDir = (new FileInfo(System.Reflection.Assembly.GetExecutingAssembly().CodeBase.Substring(8))).DirectoryName;
+        string dataPath = Path.Combine(currentAssemblyDir, ""lex.xml"");
+        if (File.Exists(dataPath))
+        {
+            XmlSerializer serializer = new XmlSerializer(typeof(List<TableWrapper>));
+            var datalist = serializer.Deserialize(new FileStream(dataPath, FileMode.Open)) as List<TableWrapper>;
+            if (datalist != null)
+            {
+                NxS = datalist.Select(d => WrapperToTable(d)).ToArray();
+            }
+        }
+    }
+
+    private static TableWrapper TableToWrapper(Table table)
+    {
+        return new TableWrapper()
+        {
+            min = table.min,
+            rng = table.rng,
+            dflt = table.dflt,
+            nxt = table.nxt
+        };
+    }
+
+    private static Table WrapperToTable(TableWrapper wrapper)
+    {
+        return new Table(wrapper.min, wrapper.rng, wrapper.dflt, wrapper.nxt);
+    }
+
+    [Serializable]
+    public class TableWrapper
+    {
+        public int min;
+        public int rng;
+        public int dflt;
+        public short[] nxt;
+
+        public TableWrapper()
+        {
+
+        }
+    }
+
+    public int NextToken() { return yylex(); }
+    public int GetPos() { return yypos; }
+    public int GetLength() { return yyleng; }
+    public void PushbackText(int length) { yyless(length); }
 %}
 
 /********************************Rules Section*********************************/

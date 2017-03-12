@@ -1,10 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShaderlabVS", "ShaderlabVS\ShaderlabVS-2015.csproj", "{096AB63C-D3A8-4CA9-89C8-84E54656188B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShaderlabVS-2015", "ShaderlabVS\ShaderlabVS-2015.csproj", "{096AB63C-D3A8-4CA9-89C8-84E54656188B}"
 	ProjectSection(ProjectDependencies) = postProject
+		{7EFC1304-D6EF-464B-970E-1CE37D40DB36} = {7EFC1304-D6EF-464B-970E-1CE37D40DB36}
 		{FABB0EBB-546D-4E42-856B-6A50EF766E9B} = {FABB0EBB-546D-4E42-856B-6A50EF766E9B}
 	EndProjectSection
 EndProject
@@ -13,6 +14,26 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShaderlabVS.UnitTest", "ShaderlabVS.UnitTest\ShaderlabVS.UnitTest.csproj", "{7B3B5D1B-E3D9-41C9-B868-3F9C89B57FEC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShaderlabVS.LexTools", "ShaderlabVS.LexTools\ShaderlabVS.LexTools.csproj", "{FABB0EBB-546D-4E42-856B-6A50EF766E9B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShaderlabVS.LexData", "ShaderlabVS.LexData\ShaderlabVS.LexData.csproj", "{7EFC1304-D6EF-464B-970E-1CE37D40DB36}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FABB0EBB-546D-4E42-856B-6A50EF766E9B} = {FABB0EBB-546D-4E42-856B-6A50EF766E9B}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{6E5F8436-C2B3-4DAC-8D23-F4471D6740D6}"
+EndProject
+Project("{911E67C6-3D85-4FCE-B560-20A9C3E3FF48}") = "gplex", "Tools\gplex.exe", "{2883C9FF-4C3C-4911-8384-98AE1B614571}"
+	ProjectSection(DebuggerProjectSystem) = preProject
+		PortSupplier = 00000000-0000-0000-0000-000000000000
+		Executable = C:\Users\rocky\Source\Repos\ShaderlabVS\Src\Tools\gplex.exe
+		RemoteMachine = ROCKY671B
+		StartingDirectory = C:\Users\rocky\Source\Repos\ShaderlabVS\Src\Tools
+		Environment = 默认值
+		LaunchingEngine = 00000000-0000-0000-0000-000000000000
+		UseLegacyDebugEngines = No
+		LaunchSQLEngine = No
+		AttachLaunchAction = No
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,8 +57,17 @@ Global
 		{FABB0EBB-546D-4E42-856B-6A50EF766E9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FABB0EBB-546D-4E42-856B-6A50EF766E9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FABB0EBB-546D-4E42-856B-6A50EF766E9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EFC1304-D6EF-464B-970E-1CE37D40DB36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EFC1304-D6EF-464B-970E-1CE37D40DB36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EFC1304-D6EF-464B-970E-1CE37D40DB36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EFC1304-D6EF-464B-970E-1CE37D40DB36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2883C9FF-4C3C-4911-8384-98AE1B614571}.Debug|Any CPU.ActiveCfg = Release
+		{2883C9FF-4C3C-4911-8384-98AE1B614571}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2883C9FF-4C3C-4911-8384-98AE1B614571} = {6E5F8436-C2B3-4DAC-8D23-F4471D6740D6}
 	EndGlobalSection
 EndGlobal

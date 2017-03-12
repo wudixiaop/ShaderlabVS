@@ -35,5 +35,11 @@ namespace ShaderlabVS
             }
             return -1;
         }
+
+        public static bool IsInCGOrHLSLFile(string filePath)
+        {
+            var lower = filePath.ToLower();
+            return lower.EndsWith(".cg") || lower.EndsWith(".hlsl");
+        }
     }
 }

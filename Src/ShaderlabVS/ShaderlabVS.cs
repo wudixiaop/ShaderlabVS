@@ -44,6 +44,16 @@ namespace ShaderlabVS
         [ContentType(Constants.ContentType)]
         public static FileExtensionToContentTypeDefinition GLSLIncludeFileType = null;
 
+        [Export]
+        [FileExtension(Constants.CGFile)]
+        [ContentType(Constants.ContentType)]
+        public static FileExtensionToContentTypeDefinition cgFileType = null;
+
+        [Export]
+        [FileExtension(Constants.HLSLFile)]
+        [ContentType(Constants.ContentType)]
+        public static FileExtensionToContentTypeDefinition hlslFileType = null;
+
         [Import]
         internal IClassificationTypeRegistryService classificationTypeRegistry = null;
 
@@ -58,6 +68,12 @@ namespace ShaderlabVS
 
     internal sealed class ShaderlabClassifier : ITagger<ClassificationTag>
     {
+
+        static ShaderlabClassifier()
+        {
+            Scanner.LoadTableDataFromLex();
+        }
+
         Dictionary<ShaderlabToken, IClassificationType> classTypeDict;
         Scanner scanner;
         ITextBuffer textBuffer;
@@ -85,6 +101,7 @@ namespace ShaderlabVS
 
         public IEnumerable<ITagSpan<ClassificationTag>> GetTags(NormalizedSnapshotSpanCollection spans)
         {
+            ShaderlabCompletionSource.ClearWordsInDocuments();
             ShaderlabCompletionSource.SetWordsInDocuments(spans[0].Snapshot.GetText());
             
             string text = " " + spans[0].Snapshot.GetText().ToLower();

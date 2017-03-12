@@ -214,8 +214,12 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
-Src/Shaderlab.lst
+*.lst
+*.lex
 Src/Shaderlab.cs
 Src/ShaderlabVS/Shaderlab.cs
-Src/ShaderlabVS/Shaderlab.lst
-Src/ShaderlabVS/Shaderlab.lex
+src/ShaderlabVS.LexData/Shaderlab.cs
+src.ShaderlabVS/ShaderlabVS.LexTools.exe
+/Src/ShaderlabVS/lex.data
+/Src/ShaderlabVS/ShaderlabVS.LexTools.exe
+/Src/ShaderlabVS/Themes/make_theme_pkgdef.py

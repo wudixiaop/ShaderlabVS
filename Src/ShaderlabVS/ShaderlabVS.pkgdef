@@ -1,0 +1,47 @@
+﻿[$RootKey$]
+
+[$RootKey$\Editors]
+
+[$RootKey$\Editors\{c702cfb7-573c-45f4-9469-115fcb519ad2}]
+
+[$RootKey$\Editors\{c702cfb7-573c-45f4-9469-115fcb519ad2}\Extensions]
+"shader"=dword:00000027
+"cginc"=dword:00000027
+"compute"=dword:00000027
+"glslinc"=dword:00000027
+
+[$RootKey$\Languages]
+
+[$RootKey$\Languages\File Extensions]
+
+[$RootKey$\Languages\File Extensions\.shader]
+"HLSLFile"=dword:00000001
+@="{c702cfb7-573c-45f4-9469-115fcb519ad2}"
+
+[$RootKey$\Languages\File Extensions\.hlsl]
+"HLSLFile"=dword:00000001
+@="{c702cfb7-573c-45f4-9469-115fcb519ad2}"
+
+[$RootKey$\Languages\File Extensions\.cg]
+"HLSLFile"=dword:00000001
+@="{c702cfb7-573c-45f4-9469-115fcb519ad2}"
+
+[$RootKey$\Languages\File Extensions\.cginc]
+"HLSLFile"=dword:00000001
+@="{c702cfb7-573c-45f4-9469-115fcb519ad2}"
+
+[$RootKey$\Languages\File Extensions\.compute]
+"HLSLFile"=dword:00000001
+@="{c702cfb7-573c-45f4-9469-115fcb519ad2}"
+
+[$RootKey$\Languages\File Extensions\.glslinc]
+"HLSLFile"=dword:00000001
+@="{c702cfb7-573c-45f4-9469-115fcb519ad2}"
+
+[$RootKey$\Languages\Language Services]
+
+[$RootKey$\Languages\Language Services\ShaderlabVS]
+@="{c702cfb7-573c-45f4-9469-115fcb519ad2}"
+
+[$RootKey$\Languages\Language Services\ShaderlabVS]
+"ShowBraceCompletion"=dword:00000001
