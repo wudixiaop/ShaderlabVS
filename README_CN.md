@@ -56,6 +56,7 @@ Features
 ![](./img/DebugSettings.PNG)
 
 ### 支持的 Visual Studio 版本:
+* Visual Studio 2013
 * Visual Studio 2015
 
 __其他版本暂时没有测试，欢迎 Pull Request 添加测试结果.__
