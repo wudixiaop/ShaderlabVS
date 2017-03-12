@@ -114,10 +114,30 @@
     </None>
     <None Include="TestFiles\101.shader" />
     <None Include="TestFiles\102.shader" />
+    <None Include="TestFiles\103.cg" />
     <None Include="TestFiles\C01.compute" />
     <None Include="TestFiles\Lighting.cginc" />
     <None Include="TestFiles\UnityCG.cginc" />
     <None Include="TestFiles\UnityCG.glslinc" />
+    <Content Include="ShaderlabVS.LexTools.exe">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Themes\ShaderlabVS.theme.v12.0.pkgdef">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Themes\ShaderlabVS.theme.v14.0.pkgdef">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Themes\ShaderlabVS.theme.v15.0.pkgdef">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="UpdateLexData.cmd">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Themes\blue.vstheme" />
+    <None Include="Themes\dark.vstheme" />
+    <None Include="Themes\light.vstheme" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Keywords.png">
@@ -168,11 +188,21 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="gplex.exe" />
+    <Content Include="gplex.exe">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="lex.xml">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="License.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <Content Include="ShaderlabVS.pkgdef">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="TestFiles\104.hlsl" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ShaderlabVS.Data\ShaderlabVS.Data.csproj">
@@ -204,6 +234,8 @@
 
 $(SolutionDir)ShaderlabVS.LexTools\$(OutDir)\ShaderlabVS.LexTools.exe Shaderlab.lex
 gplex.exe Shaderlab.lex
+XCopy /F /Y $(SolutionDir)ShaderlabVS.LexTools\$(OutDir)\ShaderlabVS.LexTools.exe 
+$(SolutionDir)ShaderlabVS.LexData\$(OutDir)ShaderlabVS.LexData.exe
 
 popd</PreBuildEvent>
   </PropertyGroup>

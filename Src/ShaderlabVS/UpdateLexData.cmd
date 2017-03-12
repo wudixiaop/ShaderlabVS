@@ -19,6 +19,8 @@ IF NOT EXIST %VS_DEV_BAT% (
 IF NOT EXIST %VS_DEV_BAT% (
     ECHO "There are no supported Visual Studio version installed on your machine!!!"
     GOTO :PAUSE
+) ELSE (
+	GOTO :MAIN
 )
 
 GOTO :PAUSE
@@ -38,7 +40,7 @@ CALL :WRITE_CS_TWO
 
 CALL %VS_DEV_BAT%
 ECHO Building
-csc %FILE% %FILE2% %FILE3% /target:exe /out:%DATA_APP%
+csc /target:exe /out:%DATA_APP% %FILE% %FILE2% %FILE3%
 
 IF EXIST %DATA_APP% (
     %DATA_APP%   
