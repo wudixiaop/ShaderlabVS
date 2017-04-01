@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.10
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShaderlabVS.Data", "ShaderlabVS.Data\ShaderlabVS.Data.csproj", "{6F1E6F30-1728-43AD-96C6-494CD780B6E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShaderlabVS.UnitTest", "ShaderlabVS.UnitTest\ShaderlabVS.UnitTest.csproj", "{7B3B5D1B-E3D9-41C9-B868-3F9C89B57FEC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShaderlabVS.LexTools", "ShaderlabVS.LexTools\ShaderlabVS.LexTools.csproj", "{FABB0EBB-546D-4E42-856B-6A50EF766E9B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShaderlabVS.LexData", "ShaderlabVS.LexData\ShaderlabVS.LexData.csproj", "{7EFC1304-D6EF-464B-970E-1CE37D40DB36}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FABB0EBB-546D-4E42-856B-6A50EF766E9B} = {FABB0EBB-546D-4E42-856B-6A50EF766E9B}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShaderlabVS-2017", "ShaderlabVS\ShaderlabVS-2017.csproj", "{096AB63C-D3A8-4CA9-89C8-84E54656188B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7EFC1304-D6EF-464B-970E-1CE37D40DB36} = {7EFC1304-D6EF-464B-970E-1CE37D40DB36}
+		{FABB0EBB-546D-4E42-856B-6A50EF766E9B} = {FABB0EBB-546D-4E42-856B-6A50EF766E9B}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6F1E6F30-1728-43AD-96C6-494CD780B6E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F1E6F30-1728-43AD-96C6-494CD780B6E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F1E6F30-1728-43AD-96C6-494CD780B6E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F1E6F30-1728-43AD-96C6-494CD780B6E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B3B5D1B-E3D9-41C9-B868-3F9C89B57FEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B3B5D1B-E3D9-41C9-B868-3F9C89B57FEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B3B5D1B-E3D9-41C9-B868-3F9C89B57FEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B3B5D1B-E3D9-41C9-B868-3F9C89B57FEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FABB0EBB-546D-4E42-856B-6A50EF766E9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FABB0EBB-546D-4E42-856B-6A50EF766E9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FABB0EBB-546D-4E42-856B-6A50EF766E9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FABB0EBB-546D-4E42-856B-6A50EF766E9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EFC1304-D6EF-464B-970E-1CE37D40DB36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EFC1304-D6EF-464B-970E-1CE37D40DB36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EFC1304-D6EF-464B-970E-1CE37D40DB36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EFC1304-D6EF-464B-970E-1CE37D40DB36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{096AB63C-D3A8-4CA9-89C8-84E54656188B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{096AB63C-D3A8-4CA9-89C8-84E54656188B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{096AB63C-D3A8-4CA9-89C8-84E54656188B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{096AB63C-D3A8-4CA9-89C8-84E54656188B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
