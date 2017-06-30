@@ -1968,7 +1968,7 @@ return the negated version of the normal} $%
 		unsigned int4 tex2DARRAYbias(usampler2DARRAY samp, float4 s)
 		unsigned int4 tex2DARRAYbias(usampler2DARRAY samp, float4 s, int texelOff)
 	} $%
-	%$ Description = {tex1Dsize} $%
+	%$ Description = {performs a texture lookup with bias in a given sampler array.} $%
 %}
 
 {%
