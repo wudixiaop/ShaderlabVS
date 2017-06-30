@@ -60,6 +60,7 @@ Development
 ### Support Visual Studio Versions:
 * Visual Studio 2013
 * Visual Studio 2015
+* Visual Studio 2017
 
 __The other version are not tested, not sure if there are also work or not.__
 
