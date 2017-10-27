@@ -68,7 +68,4 @@ __其他版本暂时没有测试，欢迎 Pull Request 添加测试结果.__
 
 ### 请我喝杯咖啡
 
-如果您喜欢这个插件，想买杯咖啡犒劳我一下。 可以通过 [Paypal](http://paypal.me/rockylai) or 或者下方支付宝二维码。
-
-<img src='http://blog.shuiguzi.com/images/pay/alipay.png' width='360' height='360'/>
-
+如果您喜欢这个插件，想买杯咖啡犒劳我一下。 可以通过 [Paypal](http://paypal.me/rockylai)
