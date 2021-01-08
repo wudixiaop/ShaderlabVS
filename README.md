@@ -3,7 +3,7 @@
 ShaderlabVS
 ===========
 
-ShaderlabVS is a Visual Studio Plugin for Unity Shaderlab programming. Latest releae build can be found at [here](http://blog.shuiguzi.com/2014/10/28/Release/) or the Release page. [Paid Version with Long Time Support](https://assetstore.unity.com/packages/slug/186176?aid=1011lGoJ) is available on Asset Store.
+ShaderlabVS is a Visual Studio Plugin for Unity Shaderlab programming. Latest releae build can be found at [here](http://blog.shuiguzi.com/2014/10/28/Release/) or the Release page. [Paid Version with Long Term Support](https://assetstore.unity.com/packages/slug/186176?aid=1011lGoJ) is available on Asset Store.
 
 If you are looking for Shaderlab extensions for Visual Studio Code, you can take look at [ShaderlabVSCode(Free)](https://marketplace.visualstudio.com/items?itemName=amlovey.shaderlabvscodefree#overview).
 
