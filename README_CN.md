@@ -1,11 +1,10 @@
 ShaderlabVS
 ===========
 
-ShaderlabVS 用于 Unity Shaderlab 编程的 Visual Studio 插件。最新的版本可以从 [VS 应用市场](https://marketplace.visualstudio.com/items?itemName=ShaderlabVS2019.ShaderlabVS) 或者 Release 页面下载。付费长期支持版本可以从 [Unity Asset Store](https://assetstore.unity.com/packages/slug/186176?aid=1011lGoJ) 或者 [面包多](https://mianbaoduo.com/o/bread/Zpubmpg=) 获取.
+**🔥 ShaderlabVS 已升级为 Omni Shader Tools For Unity，采用全新重写的解析器（从底层彻底重构）, 速度更快，更能更强。您可以从 [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=amlovey.omnishaderunityvs) 获取安装，或访问 <https://omnishader.amlovey.com> 了解更多。**
 
-如果你在找支持 Visual Stuido Code 的 Shaderlab 插件，可以看下 [ShaderlabVSCode(Free)](https://marketplace.visualstudio.com/items?itemName=amlovey.shaderlabvscodefree#overview) 这个插件
 
-[![Open Source Love](https://badges.frapsoft.com/os/mit/mit.svg?v=102)](https://github.com/wudixiaop/ShaderlabVS/) [![GitHub version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=gh&type=6&v=0.8&x2=0)](http://blog.shuiguzi.com/2014/10/28/Release/)
+ShaderlabVS 用于 Unity Shaderlab 编程的 Visual Studio 插件
 
 ### 支持的文件:
 
