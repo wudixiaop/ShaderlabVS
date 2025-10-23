@@ -3,7 +3,10 @@
 ShaderlabVS
 ===========
 
-ShaderlabVS is a Visual Studio Plugin for Unity Shaderlab programming. Latest releae build can be found at [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=ShaderlabVS2019.ShaderlabVS) or the Release page. [Paid Version with Long Term Support](https://assetstore.unity.com/packages/slug/186176?aid=1011lGoJ) is available on Asset Store.
+🔥 **ShaderlabVS is upgraded to Omni Shader Tools For Unity, featuring a completely rewritten parser from the ground up. Try it from [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=amlovey.omnishaderunityvs) or visit <https://omnishader.amlovey.com>.**
+
+-----
+ShaderlabVS is a Visual Studio Plugin for Unity Shaderlab programming. 
 
 If you are looking for Shaderlab extensions for Visual Studio Code, you can take look at [ShaderlabVSCode(Free)](https://marketplace.visualstudio.com/items?itemName=amlovey.shaderlabvscodefree#overview).
 
