@@ -1,7 +1,7 @@
 ShaderlabVS
 ===========
 
-**🔥 ShaderlabVS 已升级为 Omni Shader Tools For Unity，采用全新重写的解析器（从底层彻底重构）, 速度更快，更能更强。您可以从 [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=amlovey.omnishaderunityvs) 获取安装，或访问 <https://omnishader.amlovey.com> 了解更多。**
+**🔥 ShaderlabVS 已升级为 Omni Shader Tools for Unity，采用全新重写的解析器（从底层彻底重构）, 速度更快，性能更强。您可以从 [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=amlovey.omnishaderunityvs) 获取安装，或访问 <https://omnishader.amlovey.com> 了解更多。**
 
 
 ShaderlabVS 用于 Unity Shaderlab 编程的 Visual Studio 插件
