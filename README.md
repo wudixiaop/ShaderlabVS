@@ -3,7 +3,7 @@
 ShaderlabVS
 ===========
 
-🔥 **ShaderlabVS is upgraded to Omni Shader Tools For Unity, featuring a completely rewritten parser from the ground up. Try it from [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=amlovey.omnishaderunityvs) or visit <https://omnishader.amlovey.com>.**
+🔥 **ShaderlabVS is upgraded to Omni Shader Tools for Unity, featuring a completely rewritten parser from the ground up. Try it from [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=amlovey.omnishaderunityvs) or visit <https://omnishader.amlovey.com>.**
 
 -----
 ShaderlabVS is a Visual Studio Plugin for Unity Shaderlab programming. 
